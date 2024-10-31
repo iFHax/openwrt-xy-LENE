@@ -98,9 +98,7 @@ jobs:
     - name: Apply patches   
       run: |
         mv $GITHUB_WORKSPACE/patch/7621-237imm/defset-7915 $OPENWRT_PATH/package/emortal/default-settings/files/99-default-settings
-        mv $GITHUB_WORKSPACE/patch/7621-237imm/defset-cn $OPENWRT_PATH/package/emortal/default-settings/files/99-default-settings-chinese
-        mv $GITHUB_WORKSPACE/patch/7621-237imm/mac80211.sh $OPENWRT_PATH/package/kernel/mac80211/files/lib/wifi/mac80211.sh
-        mv $GITHUB_WORKSPACE/patch/7621-237imm/argon/bg1.jpg $OPENWRT_PATH/feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+        mv $GITHUB_WORKSPACE/patch/7621-237imm/bg1.jpg $OPENWRT_PATH/feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
     - name: Download DL Package
       run: |
@@ -154,7 +152,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: ncipollo/release-action@v1
       with:
-        name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
+        name: R${{ env.DATE }} for ${{ env.SOURCE_AUTHOR }}-${{ env.FIRMWARE_TAG }}
         allowUpdates: true
         tag: ${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
