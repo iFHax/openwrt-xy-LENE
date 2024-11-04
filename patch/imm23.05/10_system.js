@@ -81,9 +81,6 @@ return baseclass.extend({
 
 		var fields = [
 			_('Hostname'),         boardinfo.hostname,
-			_('Model'),            ChangLingTong-AX3000
-			_('Target Platform'),  (L.isObject(boardinfo.release) ? boardinfo.release.target : ''),
-			_('Firmware Version'), ChangLingTong-V1.0
 			_('Local Time'),       datestr,
 			_('Uptime'),           systeminfo.uptime ? '%t'.format(systeminfo.uptime) : null,
 			_('CPU usage (%)'),    cpuusage.cpuusage
