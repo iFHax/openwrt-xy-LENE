@@ -8,4 +8,4 @@ sed -i 's/openwrt/immortalwrt/g' package/emortal/default-settings/files/99-defau
 #mv package/com-x-wrt/luci-app-wizard package/luci-app-wizard
 #rm -rf package/com-x-wrt
 
-git clone --depth=1 https://github.com/kiddin9/luci-app-wizard.git package/luci-app-wizard
+git clone --depth=1 https://github.com/Siha06/my-openwrt-packages.git package/luci-app-wizard
