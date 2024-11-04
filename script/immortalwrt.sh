@@ -4,6 +4,8 @@ sed -i 's/ImmortalWrt/ChangLingTong/g' package/base-files/files/bin/config_gener
 sed -i 's/mirrors.vsean.net/mirror.nju.edu.cn/g' package/emortal/default-settings/files/99-default-settings-chinese
 sed -i 's/openwrt/immortalwrt/g' package/emortal/default-settings/files/99-default-settings-chinese
 
-git clone --depth=1 -b master https://github.com/x-wrt/com.x-wrt.git package/com-x-wrt
-mv package/com-x-wrt/luci-app-wizard package/luci-app-wizard
-rm -rf package/com-x-wrt
+#git clone --depth=1 -b master https://github.com/x-wrt/com.x-wrt.git package/com-x-wrt
+#mv package/com-x-wrt/luci-app-wizard package/luci-app-wizard
+#rm -rf package/com-x-wrt
+
+git clone --depth=1 https://github.com/kiddin9/luci-app-wizard.git package/luci-app-wizard
