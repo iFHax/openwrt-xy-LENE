@@ -210,7 +210,8 @@ detect_mac80211() {
 			set wireless.default_${name}.device=${name}
 			set wireless.default_${name}.network=lan
 			set wireless.default_${name}.mode=ap
-			set wireless.default_${name}.ssid=AX3000-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }')
+			set wireless.default_radio0.ssid=AX3000-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }')-2.4G
+			set wireless.default_radio1.ssid=AX3000-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }')-5G
 			set wireless.default_${name}.encryption=none
 EOF
 		uci -q commit wireless
