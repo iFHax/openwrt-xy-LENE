@@ -13,3 +13,5 @@ git clone --depth=1 https://github.com/linkease/nas-packages-luci.git package/na
 mv package/nas-packages/network/services/* package/nas-packages/
 rm -rf package/nas-packages/network
 
+rm -rf package/luci-app-amlogic
+git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
