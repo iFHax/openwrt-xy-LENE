@@ -18,7 +18,10 @@ rm -rf package/nas-packages/network
 rm -rf package/luci-app-amlogic
 git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 git clone --depth=1 https://github.com/kiddin9/openwrt-clouddrive2.git  package/clouddrive2
-git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
-mv package/kz8-small/luci-app-alist package/luci-app-alist
-mv package/kz8-small/alist package/alist
-rm -rf package/kz8-small
+
+#git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
+#rm -rf feeds/luci/applications/luci-app-alist
+#mv package/kz8-small/luci-app-alist feeds/luci/applications/luci-app-alist
+#rm -rf feeds/packages/net/alist
+#mv package/kz8-small/alist feeds/packages/net/alist
+#rm -rf package/kz8-small
