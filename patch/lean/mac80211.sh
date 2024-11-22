@@ -175,13 +175,14 @@ detect_mac80211() {
 			set wireless.radio${devidx}.band=${mode_band}
 			set wireless.radio${devidx}.htmode=$htmode
 			set wireless.radio${devidx}.disabled=0
-			set wireless.radio${devidx}.country=US
+			set wireless.radio${devidx}.country=CN
+   			set wireless.radio${devidx}.txpower=20
 
 			set wireless.default_radio${devidx}=wifi-iface
 			set wireless.default_radio${devidx}.device=radio${devidx}
 			set wireless.default_radio${devidx}.network=lan
 			set wireless.default_radio${devidx}.mode=ap
-			set wireless.default_radio${devidx}.ssid=LEDE
+			set wireless.default_radio${devidx}.ssid=AX1800
 			set wireless.default_radio${devidx}.encryption=none
 EOF
 		uci -q commit wireless
