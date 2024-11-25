@@ -97,10 +97,6 @@ jobs:
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
 
-    - name: apply patches
-      run: |
-        mv $GITHUB_WORKSPACE/patch/banner $OPENWRT_PATH/package/base-files/files/etc/banner
-
     - name: edit md5
       run: |
         rm -rf $OPENWRT_PATH/.vermagic
