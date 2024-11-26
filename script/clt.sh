@@ -9,3 +9,6 @@ mv $GITHUB_WORKSPACE/patch/imm23.05/clt/10_system.js $OPENWRT_PATH/feeds/luci/mo
 mv $GITHUB_WORKSPACE/patch/imm23.05/clt/argon/bg1.jpg $OPENWRT_PATH/feeds/luci/themes/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 git clone --depth=1 https://github.com/Siha06/my-openwrt-packages.git package/my-openwrt-packages
+
+git clone --depth=1 -b openwrt-21.02 https://github.com/immortalwrt/luci.git package/imm21
+mv package/imm21/applications/luci-app-accesscontrol feeds/luci/applications/luci-app-accesscontrol
