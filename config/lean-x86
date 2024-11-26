@@ -17,6 +17,7 @@ CONFIG_GRUB_TITLE="OpenWrt"
 # CONFIG_VMDK_IMAGES is not set
 # CONFIG_VHDX_IMAGES is not set
 CONFIG_TARGET_IMAGES_GZIP=y
+# CONFIG_TARGET_ROOTFS_EXT4FS is not set
 
 CONFIG_PACKAGE_luci-app-accesscontrol=y
 CONFIG_PACKAGE_luci-app-arpbind=y
