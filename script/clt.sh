@@ -12,3 +12,4 @@ git clone --depth=1 https://github.com/Siha06/my-openwrt-packages.git package/my
 
 git clone --depth=1 -b openwrt-21.02 https://github.com/immortalwrt/luci.git package/imm21
 mv package/imm21/applications/luci-app-accesscontrol feeds/luci/applications/luci-app-accesscontrol
+rm -rf package/imm21
