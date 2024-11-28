@@ -16,7 +16,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci
 #git clone --depth=1 -b dev https://github.com/jjm2473/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
 
 # iStore
-git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
+#git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
 #git clone --depth=1 -b master https://github.com/linkease/nas-packages.git package/nas-packages
 #git clone --depth=1 -b main https://github.com/linkease/nas-packages-luci.git package/nas-luci
 #mv package/nas-packages/network/services/* package/nas-packages/
@@ -29,6 +29,7 @@ git clone --depth=1 -b main https://github.com/linkease/istore.git package/istor
 
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/luci-app-macvlan package/luci-app-macvlan
-
-
+mv package/kz8-small/luci-app-store package/luci-app-store
+mv package/kz8-small/luci-lib-taskd package/luci-lib-taskd
+mv package/kz8-small/luci-lib-xterm package/luci-lib-xterm
 rm -rf package/kz8-small
