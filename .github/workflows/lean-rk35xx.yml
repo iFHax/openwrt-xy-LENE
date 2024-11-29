@@ -7,7 +7,8 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: config/r66s-lean
+  CONFIG_FILE: config/rockchip-lean
+  DIY_SCRIPT: script/rockchip-lean.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
@@ -150,7 +151,7 @@ jobs:
         body: |
           ### 📒 固件信息
           - 这是基于lean'lede 编译的固件
-          - 💻 这是 r66s使用的 OpenWrt 固件
+          - 💻 这是 rockchip 使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
           - 🌐 默认地址: 192.168.23.1
