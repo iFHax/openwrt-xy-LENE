@@ -89,10 +89,6 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: apply patches
-      run: |
-        mv $GITHUB_WORKSPACE/patch/lean/defset $OPENWRT_PATH/package/lean/default-settings/files/zzz-default-settings
-
     - name: Download DL Package
       run: |
         mv $CONFIG_FILE $OPENWRT_PATH/.config
