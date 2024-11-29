@@ -28,8 +28,18 @@ git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci
 #git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
 
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
-mv package/kz8-small/luci-app-macvlan package/luci-app-macvlan
+
 mv package/kz8-small/luci-app-store package/luci-app-store
 mv package/kz8-small/luci-lib-taskd package/luci-lib-taskd
 mv package/kz8-small/luci-lib-xterm package/luci-lib-xterm
+mv package/kz8-small/taskd package/taskd
+mv package/kz8-small/luci-app-quickstart package/luci-app-quickstart
+mv package/kz8-small/quickstart package/quickstart
+mv package/kz8-small/luci-app-istorex package/luci-app-istorex
+mv package/kz8-small/luci-app-ddnsto package/luci-app-ddnsto
+mv package/kz8-small/ddnsto package/ddnsto
+mv package/kz8-small/luci-app-linkease package/luci-app-linkease
+mv package/kz8-small/linkease package/linkease
+
+mv package/kz8-small/luci-app-macvlan package/luci-app-macvlan
 rm -rf package/kz8-small
