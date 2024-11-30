@@ -89,6 +89,12 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
+    - name: Load Custom Script(加载自定义脚本)
+      run: |
+        chmod +x $DIY_SCRIPT
+        cd $OPENWRT_PATH
+        $GITHUB_WORKSPACE/$DIY_SCRIPT
+
     - name: Download DL Package
       run: |
         mv $CONFIG_FILE $OPENWRT_PATH/.config
