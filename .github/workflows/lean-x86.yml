@@ -96,11 +96,6 @@ jobs:
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
 
-    - name: apply patches
-      run: |
-        mv $GITHUB_WORKSPACE/patch/lean/defset $OPENWRT_PATH/package/lean/default-settings/files/zzz-default-settings
-        mv $GITHUB_WORKSPACE/patch/banner $OPENWRT_PATH/package/base-files/files/etc/banner
-
     - name: Download DL Package
       run: |
         mv $CONFIG_FILE $OPENWRT_PATH/.config
