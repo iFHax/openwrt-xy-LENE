@@ -16,8 +16,8 @@ rm -rf feeds/smpackage/{qBittorrent*,wrtbwmon*,Unblock*,music*,base-files,dnsmas
 
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
-#git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
-#git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
+git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 #rm -rf package/luci-app-amlogic
 #git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
