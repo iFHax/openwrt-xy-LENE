@@ -8,6 +8,8 @@ mv $GITHUB_WORKSPACE/patch/banner $OPENWRT_PATH/package/base-files/files/etc/ban
 mv $GITHUB_WORKSPACE/patch/lean/defset $OPENWRT_PATH/package/lean/default-settings/files/zzz-default-settings
 rm -rf feeds/smpackage/{qBittorrent*,wrtbwmon*,Unblock*,music*,base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
+git clone --depth=1 https://github.com/ZeaKyX/luci-app-speedtest-web.git package/luci-app-speedtest-web
+
 #下载5g模块
 #git clone --depth=1 https://github.com/Siriling/5G-Modem-Support.git package/5g-modem
 #sed -i 's/移动通信模组/通信模组/g' package/5g-modem/luci-app-modem/po/zh-cn/modem.po
