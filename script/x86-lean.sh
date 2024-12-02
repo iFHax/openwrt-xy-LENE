@@ -6,7 +6,7 @@ sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 
 mv $GITHUB_WORKSPACE/patch/banner $OPENWRT_PATH/package/base-files/files/etc/banner
 mv $GITHUB_WORKSPACE/patch/lean/defset $OPENWRT_PATH/package/lean/default-settings/files/zzz-default-settings
-rm -rf feeds/smpackage/{qBittorrent*,wrtbwmon*,base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+rm -rf feeds/smpackage/{qBittorrent*,wrtbwmon*,Unblock*,music*,base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
 #下载5g模块
 #git clone --depth=1 https://github.com/Siriling/5G-Modem-Support.git package/5g-modem
