@@ -83,8 +83,9 @@ jobs:
 
     - name: Install Feeds(安装feeds)
       run: |
+        mv $GITHUB_WORKSPACE/patch/lean/feeds.conf.default $OPENWRT_PATH/feeds.conf.default
         cd $OPENWRT_PATH
-         sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+        sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds update -a
