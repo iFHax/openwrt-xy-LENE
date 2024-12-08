@@ -10,6 +10,7 @@ mv $GITHUB_WORKSPACE/patch/imm23.05/clt/argon/bg1.jpg $OPENWRT_PATH/feeds/luci/t
 
 git clone --depth=1 https://github.com/Siha06/my-openwrt-packages.git package/my-openwrt-packages
 
-git clone --depth=1 https://github.com/coolsnowwolf/luci.git package/lean-luci23
-mv package/lean-luci23/applications/luci-app-accesscontrol feeds/luci/applications/luci-app-accesscontrol
+git clone --depth=1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git package/imm-luci23
+mv package/imm-luci23/applications/luci-app-accesscontrol feeds/luci/applications/luci-app-accesscontrol
+mv package/imm-luci23/applications/luci-app-autoreboot feeds/luci/applications/luci-app-autoreboot
 rm -rf package/lean-luci23
