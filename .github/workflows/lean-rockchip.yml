@@ -1,4 +1,4 @@
-name: lean-rk35xx
+name: lean-rockchip
 # 脚本参考github/haiibo和dzlea
 # Add a button to trigger the workflow
 on: 
@@ -8,13 +8,13 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   CONFIG_FILE: config/rockchip-lean
-  DIY_SCRIPT: script/rockchip-lean.sh
+  DIY_SCRIPT: script/lean.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: lean-rk35xx
+  FIRMWARE_TAG: lean-rockchip
   TZ: Asia/Shanghai
 
 jobs:
@@ -78,7 +78,7 @@ jobs:
       uses: HiGarfield/cachewrtbuild@main
       with:
         ccache: false
-        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.SOURCE_AUTHOR }}-rk35xx
+        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.SOURCE_AUTHOR }}-rockchip
         prefix: ${{ env.OPENWRT_PATH }}
 
     - name: Install Feeds(安装feeds)
