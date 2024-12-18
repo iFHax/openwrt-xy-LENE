@@ -57,6 +57,10 @@ sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
 echo "DISTRIB_REVISION='Vip-Custom-2024.12.18_lg_OpenwrtServer'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='EzOpWrt '" >> /etc/openwrt_release
+mv /etc/99-msd_lite /etc/hotplug.d/iface/99-msd_lite
+mv /etc/99-udpxy /etc/hotplug.d/iface/99-udpxy
+chmod a+rwx /etc/hotplug.d/iface/99-msd_lite
+chmod a+rwx /etc/hotplug.d/iface/99-udpxy
 
 sed -i '/log-facility/d' /etc/dnsmasq.conf
 echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
