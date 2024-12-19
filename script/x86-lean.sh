@@ -6,6 +6,7 @@ sed -i 's/LEDE/EzOpWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/EzOpWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/EzOpWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
+mv $GITHUB_WORKSPACE/patch/lean/index.htm feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 mv $GITHUB_WORKSPACE/patch/lean/defset package/lean/default-settings/files/zzz-default-settings
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
