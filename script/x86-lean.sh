@@ -50,6 +50,9 @@ rm -rf feeds/packages/utils/docker
 rm -rf feeds/packages/utils/dockerd
 rm -rf feeds/packages/net/aria2
 rm -rf feeds/luci/applications/luci-app-aria2
+mv feeds/smpackage/aria2 package/aria2
+mv feeds/smpackage/luci-app-aria2 package/luci-app-aria2
+
 rm -rf feeds/luci/applications/luci-app-socat
 rm -rf feeds/luci/applications/luci-app-pptp-server
 
