@@ -36,6 +36,8 @@ sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/usb_printer.lua
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/xunlei.lua
 sed -i 's/services/nas/g'  /usr/lib/lua/luci/view/minidlna_status.htm
 
+sed -i 's/\"services\"/\"control\"/g' /usr/lib/lua/luci/controller/mia.lua
+sed -i 's/\"services\"/\"control\"/g' /usr/lib/lua/luci/controller/appfilter.lua
 sed -i 's#downloads.openwrt.org#mirror.nju.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
 sed -i '/core/d' /etc/opkg/distfeeds.conf
 sed -i '/smpackage/d' /etc/opkg/distfeeds.conf
@@ -54,7 +56,7 @@ sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
 
 date_version=$(date +"%y.%m.%d")
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
-echo "DISTRIB_REVISION='Vip-Custom-2024.12.18_lg_OpenwrtServer'" >> /etc/openwrt_release
+echo "DISTRIB_REVISION='Vip-Custom-2024.12.20_lg_OpenwrtServer'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='EzOpWrt '" >> /etc/openwrt_release
 mv /etc/99-msd_lite /etc/hotplug.d/iface/99-msd_lite
