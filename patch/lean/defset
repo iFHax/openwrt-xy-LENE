@@ -54,6 +54,7 @@ sed -i '/REDIRECT --to-ports 53/d' /etc/firewall.user
 sed -i '/option disabled/d' /etc/config/wireless
 sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
 
+sed -i '/luciname/d' /usr/lib/lua/luci/view/admin_status/index.htm
 date_version=$(date +"%y.%m.%d")
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
 echo "DISTRIB_REVISION='Vip-Custom-2024.12.20_lg_OpenwrtServer'" >> /etc/openwrt_release
