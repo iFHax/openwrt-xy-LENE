@@ -13,6 +13,7 @@ rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftabl
 rm -rf feeds/smpackage/luci-app-advanced
 rm -rf feeds/smpackage/docker
 rm -rf feeds/smpackage/dockerd
+rm -rf feeds/smpackage/luci-app-alist
 rm -rf feeds/smpackage/luci-app-msd_lite
 rm -rf feeds/smpackage/luci-app-wizard
 
@@ -59,8 +60,6 @@ rm -rf feeds/smpackage/luci-app-pppoe-server
 rm -rf feeds/smpackage/luci-app-socat
 rm -rf feeds/smpackage/luci-app-wolplus
 
-rm -rf feeds/smpackage/msd_lite
-git clone --depth 1 https://github.com/ximiTech/msd_lite.git package/msd_lite
 git clone --depth 1 https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
 git clone --depth 1 https://github.com/kenzok8/openwrt-packages package/oppkg
 mv package/oppkg/luci-app-alist package/luci-app-alist
