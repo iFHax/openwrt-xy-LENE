@@ -60,7 +60,7 @@ rm -rf feeds/smpackage/luci-app-pppoe-server
 rm -rf feeds/smpackage/luci-app-socat
 rm -rf feeds/smpackage/luci-app-wolplus
 
-git clone --depth 1 https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
+git clone --depth 1 https://github.com/CHDman/luci-app-msd_lite.git package/luci-app-msd_lite
 git clone --depth 1 https://github.com/kenzok8/openwrt-packages package/oppkg
 mv package/oppkg/luci-app-alist package/luci-app-alist
 rm -rf package/oppkg
