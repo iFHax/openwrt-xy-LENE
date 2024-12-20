@@ -69,8 +69,10 @@ rm -rf package/oppkg
 rm -rf feeds/packages/utils/docker
 rm -rf feeds/packages/utils/dockerd
 rm -rf feeds/packages/utils/containerd
+rm -rf feeds/packages/utils/runc
 git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages package/imm23pkg
 mv package/imm23pkg/utils/containerd feeds/packages/utils/containerd
 mv package/imm23pkg/utils/docker feeds/packages/utils/docker
 mv package/imm23pkg/utils/dockerd feeds/packages/utils/dockerd
+mv package/imm23pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm23pkg
