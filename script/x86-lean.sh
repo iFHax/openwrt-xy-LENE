@@ -14,7 +14,7 @@ rm -rf feeds/smpackage/luci-app-advanced
 rm -rf feeds/smpackage/docker
 rm -rf feeds/smpackage/dockerd
 rm -rf feeds/smpackage/luci-app-alist
-#rm -rf feeds/smpackage/msd_lite
+rm -rf feeds/smpackage/msd_lite
 rm -rf feeds/smpackage/luci-app-msd_lite
 rm -rf feeds/smpackage/luci-app-wizard
 
@@ -29,8 +29,8 @@ git clone --depth=1 -b main https://github.com/linkease/istore.git package/istor
 
 
 rm -rf feeds/luci/themes/luci-theme-argon
-#rm -rf feeds/luci/applications/luci-app-argon-config
-#git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
+rm -rf feeds/luci/applications/luci-app-argon-config
+git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
 git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 #rm -rf package/luci-app-amlogic
@@ -43,10 +43,11 @@ sed -i 's/上网时间控制/用户管控/g' feeds/luci/applications/luci-app-ac
 git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netwizard package/luci-app-netwizard
 git clone --depth 1 https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
+
 git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package.git package/sirpdboy-package
-mv package/sirpdboy-package/luci-app-pppoe-server feeds/luci-app-pppoe-server
-mv package/sirpdboy-package/luci-app-socat feeds/luci-app-socat
-mv package/sirpdboy-package/luci-app-wolplus feeds/luci-app-wolplus
+mv package/sirpdboy-package/luci-app-pppoe-server package/luci-app-pppoe-server
+mv package/sirpdboy-package/luci-app-socat package/luci-app-socat
+mv package/sirpdboy-package/luci-app-wolplus package/luci-app-wolplus
 rm -rf package/sirpdboy-package
 
 rm -rf feeds/packages/net/aria2
@@ -61,7 +62,7 @@ rm -rf feeds/smpackage/luci-app-pppoe-server
 rm -rf feeds/smpackage/luci-app-socat
 rm -rf feeds/smpackage/luci-app-wolplus
 
-#git clone --depth 1 https://github.com/CHDman/luci-app-msd_lite.git package/luci-app-msd_lite
+git clone --depth 1 https://github.com/CHDman/luci-app-msd_lite.git package/luci-app-msd_lite
 git clone --depth 1 https://github.com/kenzok8/openwrt-packages package/oppkg
 mv package/oppkg/luci-app-alist package/luci-app-alist
 rm -rf package/oppkg
