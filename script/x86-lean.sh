@@ -14,6 +14,7 @@ rm -rf feeds/smpackage/luci-app-advanced
 rm -rf feeds/smpackage/docker
 rm -rf feeds/smpackage/dockerd
 rm -rf feeds/smpackage/luci-app-alist
+rm -rf feeds/smpackage/msd_lite
 rm -rf feeds/smpackage/luci-app-msd_lite
 rm -rf feeds/smpackage/luci-app-wizard
 
