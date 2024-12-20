@@ -11,7 +11,8 @@ mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 mv $GITHUB_WORKSPACE/patch/lean/defset package/lean/default-settings/files/zzz-default-settings
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 rm -rf feeds/smpackage/luci-app-advanced
-
+rm -rf feeds/smpackage/docker
+rm -rf feeds/smpackage/dockerd
 rm -rf feeds/smpackage/luci-app-msd_lite
 rm -rf feeds/smpackage/luci-app-wizard
 
@@ -60,11 +61,14 @@ rm -rf feeds/smpackage/luci-app-pppoe-server
 rm -rf feeds/smpackage/luci-app-socat
 rm -rf feeds/smpackage/luci-app-wolplus
 
-mv feeds/smpackage/docker feeds/packages/utils/docker
-mv feeds/smpackage/dockerd feeds/packages/utils/dockerd
 rm -rf feeds/smpackage/msd_lite
 git clone --depth 1 https://github.com/ximiTech/msd_lite.git package/msd_lite
 git clone --depth 1 https://github.com/ximiTech/luci-app-msd_lite.git package/luci-app-msd_lite
 git clone --depth 1 https://github.com/kenzok8/openwrt-packages package/oppkg
 mv package/oppkg/luci-app-alist package/luci-app-alist
 rm -rf package/oppkg
+
+git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages package/imm23pkg
+mv package/imm23pkg/utils/docker feeds/packages/utils/docker
+mv package/imm23pkg/utils/dockerd feeds/packages/utils/dockerd
+rm -rf package/imm23pkg
