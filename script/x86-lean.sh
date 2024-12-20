@@ -47,8 +47,6 @@ mv package/sirpdboy-package/luci-app-socat feeds/luci-app-socat
 mv package/sirpdboy-package/luci-app-wolplus feeds/luci-app-wolplus
 rm -rf package/sirpdboy-package
 
-rm -rf feeds/packages/utils/docker
-rm -rf feeds/packages/utils/dockerd
 rm -rf feeds/packages/net/aria2
 rm -rf feeds/luci/applications/luci-app-aria2
 mv feeds/smpackage/aria2 package/aria2
@@ -68,7 +66,11 @@ git clone --depth 1 https://github.com/kenzok8/openwrt-packages package/oppkg
 mv package/oppkg/luci-app-alist package/luci-app-alist
 rm -rf package/oppkg
 
+rm -rf feeds/packages/utils/docker
+rm -rf feeds/packages/utils/dockerd
+rm -rf feeds/packages/utils/containerd
 git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages package/imm23pkg
+mv package/imm23pkg/utils/dockerd feeds/packages/utils/containerd
 mv package/imm23pkg/utils/docker feeds/packages/utils/docker
 mv package/imm23pkg/utils/dockerd feeds/packages/utils/dockerd
 rm -rf package/imm23pkg
