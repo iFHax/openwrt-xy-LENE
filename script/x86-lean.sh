@@ -20,6 +20,7 @@ rm -rf feeds/smpackage/luci-app-wizard
 rm -rf feeds/smpackage/luci-app-pptp-server
 rm -rf feeds/smpackage/luci-theme-kucat
 
+#mv $GITHUB_WORKSPACE/patch/lean/index.htm package/base-files/files/etc/index.htm
 mv $GITHUB_WORKSPACE/patch/lean/others/99-msd_lite package/base-files/files/etc/99-msd_lite
 mv $GITHUB_WORKSPACE/patch/lean/others/99-udpxy package/base-files/files/etc/99-udpxy
 git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
