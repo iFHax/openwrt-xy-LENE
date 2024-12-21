@@ -23,6 +23,12 @@ git clone --depth=1 -b main https://github.com/linkease/nas-packages-luci.git pa
 mv package/nas-packages/network/services/* package/nas-packages/
 rm -rf package/nas-packages/network
 
+git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
+mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
+mv package/kz8-small/luci-app-design-config package/luci-app-design-config
+rm -rf package/kz8-small
+
+
 #下载5g模块
 #git clone --depth=1 https://github.com/Siriling/5G-Modem-Support.git package/5g-modem
 #sed -i 's/移动通信模组/通信模组/g' package/5g-modem/luci-app-modem/po/zh-cn/modem.po
