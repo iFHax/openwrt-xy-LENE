@@ -3,10 +3,11 @@ sed -i "s/192\.168\.[0-9]*\.[0-9]*/192.168.23.1/g" $(find ./feeds/luci/modules/l
 sed -i 's/192.168.1.1/192.168.23.1/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/TikTok-Router/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/TikTok-Router/g' package/base-files/luci2/bin/config_generate
-sed -i "s/luci-theme-bootstrap/luci-theme-design/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
+#sed -i "s/luci-theme-bootstrap/luci-theme-design/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
+sed -i 's/LEDE/TikTok-Router/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-#mv $GITHUB_WORKSPACE/patch/banner $OPENWRT_PATH/package/base-files/files/etc/banner
-#mv $GITHUB_WORKSPACE/patch/lean/defset $OPENWRT_PATH/package/lean/default-settings/files/zzz-default-settings
+mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
+mv $GITHUB_WORKSPACE/patch/lean/defset-tiktok package/lean/default-settings/files/zzz-default-settings
 
 git clone --depth=1 https://github.com/fw876/helloworld.git package/helloworld
 git clone --depth=1 https://github.com/vernesong/OpenClash.git  package/openclash
