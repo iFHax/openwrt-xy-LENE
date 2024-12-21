@@ -17,6 +17,8 @@ rm -rf feeds/smpackage/luci-app-alist
 rm -rf feeds/smpackage/msd_lite
 rm -rf feeds/smpackage/luci-app-msd_lite
 rm -rf feeds/smpackage/luci-app-wizard
+rm -rf feeds/smpackage/luci-app-pptp-server
+rm -rf feeds/smpackage/luci-theme-kucat
 
 mv $GITHUB_WORKSPACE/patch/lean/others/99-msd_lite package/base-files/files/etc/99-msd_lite
 mv $GITHUB_WORKSPACE/patch/lean/others/99-udpxy package/base-files/files/etc/99-udpxy
@@ -48,6 +50,8 @@ git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package.git package/sir
 mv package/sirpdboy-package/luci-app-pppoe-server package/luci-app-pppoe-server
 mv package/sirpdboy-package/luci-app-socat package/luci-app-socat
 mv package/sirpdboy-package/luci-app-wolplus package/luci-app-wolplus
+mv package/sirpdboy-package/luci-app-pptpserver package/luci-app-pptpserver
+
 rm -rf package/sirpdboy-package
 
 rm -rf feeds/packages/net/aria2
@@ -77,3 +81,5 @@ mv package/imm23pkg/utils/docker feeds/packages/utils/docker
 mv package/imm23pkg/utils/dockerd feeds/packages/utils/dockerd
 mv package/imm23pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm23pkg
+
+git clone --depth 1 -b main https://github.com/sirpdboy/luci-theme-kucat.git package/luci-theme-kucat
