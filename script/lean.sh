@@ -22,6 +22,7 @@ git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/pa
 
 
 rm -rf feeds/packages/net/adguardhome
+rm -rf feeds/luci/applications/luci-app-softethervpn
 git clone --depth 1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
@@ -30,6 +31,7 @@ mv package/kz8-small/luci-app-netspeedtest package/luci-app-netspeedtest
 mv package/kz8-small/homebox package/homebox
 mv package/kz8-small/luci-app-partexp package/luci-app-partexp
 mv package/kz8-small/luci-app-alist package/luci-app-alist
+mv package/kz8-small/luci-app-softethervpn package/luci-app-softethervpn
 rm -rf package/kz8-small
 
 # iStore
