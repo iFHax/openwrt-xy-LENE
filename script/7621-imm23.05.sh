@@ -12,3 +12,11 @@ git clone --depth=1 -b master https://github.com/linkease/nas-packages.git packa
 git clone --depth=1 -b main https://github.com/linkease/nas-packages-luci.git package/nas-luci
 mv package/nas-packages/network/services/* package/nas-packages/
 rm -rf package/nas-packages/network
+
+rm -rf feeds/packages/lang/golang
+git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+rm -rf feeds/packages/devel/gn
+rm -rf feeds/luci/applications/luci-app-passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall-packages
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+#git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
