@@ -7,7 +7,7 @@ sed -i 's/LEDE/EzOpWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/EzOpWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/clt/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/defset package/lean/default-settings/files/zzz-default-settings
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-msd_lite package/base-files/files/etc/99-msd_lite
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-udpxy package/base-files/files/etc/99-udpxy
