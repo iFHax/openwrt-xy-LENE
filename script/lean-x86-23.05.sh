@@ -5,13 +5,12 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/luci2/bin/config_genera
 sed -i 's/LEDE/EzOpWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/EzOpWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/EzOpWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/clt/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
-mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
-mv $GITHUB_WORKSPACE/patch/lean/defset package/lean/default-settings/files/zzz-default-settings
-
-mv $GITHUB_WORKSPACE/patch/lean/others/99-msd_lite package/base-files/files/etc/99-msd_lite
-mv $GITHUB_WORKSPACE/patch/lean/others/99-udpxy package/base-files/files/etc/99-udpxy
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/defset package/lean/default-settings/files/zzz-default-settings
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-msd_lite package/base-files/files/etc/99-msd_lite
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-udpxy package/base-files/files/etc/99-udpxy
 
 git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
 #git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
