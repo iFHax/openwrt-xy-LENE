@@ -9,19 +9,12 @@ sed -i 's/LEDE/EzOpWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/clt/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 mv $GITHUB_WORKSPACE/patch/lean/defset package/lean/default-settings/files/zzz-default-settings
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
-rm -rf feeds/smpackage/luci-app-advanced
-rm -rf feeds/smpackage/docker
-rm -rf feeds/smpackage/dockerd
-rm -rf feeds/smpackage/msd_lite
-rm -rf feeds/smpackage/luci-app-msd_lite
-rm -rf feeds/smpackage/luci-app-wizard
-rm -rf feeds/smpackage/luci-app-pptp-server
-rm -rf feeds/smpackage/luci-theme-kucat
 
 mv $GITHUB_WORKSPACE/patch/lean/others/99-msd_lite package/base-files/files/etc/99-msd_lite
 mv $GITHUB_WORKSPACE/patch/lean/others/99-udpxy package/base-files/files/etc/99-udpxy
-git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
+
+git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
+git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
@@ -31,38 +24,25 @@ rm -rf feeds/luci/applications/luci-app-argon-config
 git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
-#rm -rf package/luci-app-amlogic
-#git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
-#git clone --depth 1 https://github.com/kiddin9/openwrt-clouddrive2.git  package/clouddrive2
-#git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
-联机用户
 sed -i 's/联机用户/已连接用户/g' feeds/smpackage/luci-app-onliner/po/zh-cn/onliner.po
 sed -i 's/上网时间控制/用户管控/g' feeds/luci/applications/luci-app-accesscontrol/po/zh_Hans/mia.po
 git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netwizard package/luci-app-netwizard
 git clone --depth 1 https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
+git clone --depth 1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
+git clone --depth 1 -b js https://github.com/sirpdboy/luci-theme-kucat.git package/luci-theme-kucat
 
 git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package.git package/sirpdboy-package
 mv package/sirpdboy-package/luci-app-pppoe-server package/luci-app-pppoe-server
-mv package/sirpdboy-package/luci-app-socat package/luci-app-socat
-mv package/sirpdboy-package/luci-app-wolplus package/luci-app-wolplus
+#mv package/sirpdboy-package/luci-app-socat package/luci-app-socat
+#mv package/sirpdboy-package/luci-app-wolplus package/luci-app-wolplus
 mv package/sirpdboy-package/luci-app-pptpserver package/luci-app-pptpserver
-
 rm -rf package/sirpdboy-package
 
 rm -rf feeds/packages/net/aria2
 rm -rf feeds/luci/applications/luci-app-aria2
-mv feeds/smpackage/aria2 package/aria2
-mv feeds/smpackage/luci-app-aria2 package/luci-app-aria2
-
-rm -rf feeds/luci/applications/luci-app-socat
+#rm -rf feeds/luci/applications/luci-app-socat
 rm -rf feeds/luci/applications/luci-app-pptp-server
-
-rm -rf feeds/smpackage/luci-app-pppoe-server
-rm -rf feeds/smpackage/luci-app-socat
-rm -rf feeds/smpackage/luci-app-wolplus
-
-
 rm -rf feeds/packages/utils/docker
 rm -rf feeds/packages/utils/dockerd
 rm -rf feeds/packages/utils/containerd
@@ -74,4 +54,11 @@ mv package/imm23pkg/utils/dockerd feeds/packages/utils/dockerd
 mv package/imm23pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm23pkg
 
-git clone --depth 1 -b js https://github.com/sirpdboy/luci-theme-kucat.git package/luci-theme-kucat
+git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
+mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
+mv package/kz8-small/luci-app-partexp package/luci-app-partexp
+
+mv package/kz8-small/aria2 package/aria2
+mv package/kz8-small/luci-app-aria2 package/luci-app-aria2
+
+rm -rf package/kz8-small
