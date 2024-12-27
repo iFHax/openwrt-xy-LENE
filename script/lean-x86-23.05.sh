@@ -58,6 +58,8 @@ mv package/kz8-small/luci-app-partexp package/luci-app-partexp
 mv package/kz8-small/luci-app-wolplus package/luci-app-wolplus
 mv package/kz8-small/aria2 package/aria2
 mv package/kz8-small/luci-app-aria2 package/luci-app-aria2
+mv package/kz8-small/wrtbwmon package/wrtbwmon
+mv package/kz8-small/luci-app-wrtbwmon package/luci-app-wrtbwmon
 mv package/kz8-small/luci-app-onliner package/luci-app-onliner
 sed -i 's/联机用户/已连接用户/g' package/kz8-small/luci-app-onliner/po/zh-cn/onliner.po
 rm -rf package/kz8-small
