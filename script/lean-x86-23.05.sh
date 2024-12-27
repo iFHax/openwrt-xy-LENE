@@ -33,7 +33,6 @@ git clone --depth 1 https://github.com/sirpdboy/netspeedtest.git package/netspee
 git clone --depth 1 -b js https://github.com/sirpdboy/luci-theme-kucat.git package/luci-theme-kucat
 
 rm -rf feeds/luci/applications/luci-app-socat
-#rm -rf feeds/luci/applications/luci-app-pptp-server
 git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package.git package/sirpdboy-package
 mv package/sirpdboy-package/luci-app-pppoe-server package/luci-app-pppoe-server
 mv package/sirpdboy-package/luci-app-socat package/luci-app-socat
@@ -58,14 +57,17 @@ rm -rf feeds/packages/net/adguardhome
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
-mv package/kz8-small/luci-app-guest-wifi package/luci-app-guest-wifi
-mv package/kz8-small/luci-app-partexp package/luci-app-partexp
-mv package/kz8-small/luci-app-wolplus package/luci-app-wolplus
-mv package/kz8-small/luci-app-softethervpn package/luci-app-softethervpn
 mv package/kz8-small/aria2 package/aria2
 mv package/kz8-small/luci-app-aria2 package/luci-app-aria2
+mv package/kz8-small/luci-app-guest-wifi package/luci-app-guest-wifi
+mv package/kz8-small/luci-app-ipsec-server package/luci-app-ipsec-server
+mv package/kz8-small/luci-app-onliner package/luci-app-onliner
+mv package/kz8-small/luci-app-partexp package/luci-app-partexp
+mv package/kz8-small/luci-app-poweroffdevice package/luci-app-poweroffdevice
+mv package/kz8-small/luci-app-softethervpn package/luci-app-softethervpn
+mv package/kz8-small/luci-app-wolplus package/luci-app-wolplus
 mv package/kz8-small/wrtbwmon package/wrtbwmon
 mv package/kz8-small/luci-app-wrtbwmon package/luci-app-wrtbwmon
-mv package/kz8-small/luci-app-onliner package/luci-app-onliner
+
 sed -i 's/联机用户/已连接用户/g' package/kz8-small/luci-app-onliner/po/zh-cn/onliner.po
 rm -rf package/kz8-small
