@@ -52,7 +52,9 @@ mv package/imm23pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm23pkg
 
 rm -rf feeds/packages/net/aria2
+rm -rf feeds/packages/net/msd_lite
 rm -rf feeds/luci/applications/luci-app-aria2
+rm -rf feeds/luci/applications/luci-app-msd_lite
 rm -rf feeds/luci/applications/luci-app-softether
 rm -rf feeds/packages/net/adguardhome
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
@@ -62,6 +64,8 @@ mv package/kz8-small/aria2 package/aria2
 mv package/kz8-small/luci-app-aria2 package/luci-app-aria2
 mv package/kz8-small/luci-app-guest-wifi package/luci-app-guest-wifi
 mv package/kz8-small/luci-app-ipsec-server package/luci-app-ipsec-server
+mv package/kz8-small/msd_lite package/msd_lite
+mv package/kz8-small/luci-app-msd_lite package/luci-app-msd_lite
 mv package/kz8-small/luci-app-onliner package/luci-app-onliner
 mv package/kz8-small/luci-app-partexp package/luci-app-partexp
 mv package/kz8-small/luci-app-poweroffdevice package/luci-app-poweroffdevice
