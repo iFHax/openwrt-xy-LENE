@@ -65,6 +65,7 @@ mv package/kz8-small/luci-app-ipsec-server package/luci-app-ipsec-server
 mv package/kz8-small/luci-app-onliner package/luci-app-onliner
 mv package/kz8-small/luci-app-partexp package/luci-app-partexp
 mv package/kz8-small/luci-app-poweroffdevice package/luci-app-poweroffdevice
+mv package/kz8-small/luci-app-pptp-server package/luci-app-pptp-server
 mv package/kz8-small/luci-app-softethervpn package/luci-app-softethervpn
 mv package/kz8-small/luci-app-wolplus package/luci-app-wolplus
 mv package/kz8-small/wrtbwmon package/wrtbwmon
