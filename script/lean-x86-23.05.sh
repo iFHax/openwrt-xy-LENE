@@ -51,15 +51,11 @@ mv package/imm23pkg/utils/dockerd feeds/packages/utils/dockerd
 mv package/imm23pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm23pkg
 
-rm -rf feeds/packages/net/aria2
-rm -rf feeds/luci/applications/luci-app-aria2
 rm -rf feeds/luci/applications/luci-app-softether
 rm -rf feeds/packages/net/adguardhome
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
-mv package/kz8-small/aria2 package/aria2
-mv package/kz8-small/luci-app-aria2 package/luci-app-aria2
 mv package/kz8-small/luci-app-guest-wifi package/luci-app-guest-wifi
 mv package/kz8-small/luci-app-ipsec-server package/luci-app-ipsec-server
 mv package/kz8-small/luci-app-onliner package/luci-app-onliner
