@@ -106,7 +106,7 @@ return baseclass.extend({
 				systeminfo.load[1] / 65535.0,
 				systeminfo.load[2] / 65535.0
 			) : null,
-			_('CPU状态 '),          ' 使用率 ' + cpuusage.cpuusage + ' ， ' + '温度 ' + diytemp.diy + ' °C' + ' ， ' + ' 频率 ' + diyfreq.diyfreq / 1000 + ' MHz ' 
+			_('CPU状态 '),          ' 使用率 ' + cpuusage.cpuusage + ' ， ' + '温度 ' + diytemp.diytemp + ' °C' + ' ， ' + ' 频率 ' + diyfreq.diyfreq / 1000 + ' MHz ' 
 		];
 
 		if (tempinfo.tempinfo) {
