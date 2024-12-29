@@ -33,6 +33,16 @@ var callCPUUsage = rpc.declare({
 	method: 'getCPUUsage'
 });
 
+var callDiyFreq = rpc.declare({
+	object: 'luci',
+	method: 'getDiyFreq'
+});
+
+var callDiyTemp = rpc.declare({
+	object: 'luci',
+	method: 'getDiyTemp'
+});
+
 var callTempInfo = rpc.declare({
 	object: 'luci',
 	method: 'getTempInfo'
@@ -48,6 +58,8 @@ return baseclass.extend({
 			L.resolveDefault(callCPUBench(), {}),
 			L.resolveDefault(callCPUInfo(), {}),
 			L.resolveDefault(callCPUUsage(), {}),
+			L.resolveDefault(callDiyFreq(), {}),
+			L.resolveDefault(callDiyTemp(), {}),
 			L.resolveDefault(callTempInfo(), {}),
 			L.resolveDefault(callLuciVersion(), { revision: _('unknown version'), branch: 'LuCI' })
 		]);
@@ -59,8 +71,10 @@ return baseclass.extend({
 		    cpubench    = data[2],
 		    cpuinfo     = data[3],
 		    cpuusage    = data[4],
-		    tempinfo    = data[5],
-		    luciversion = data[6];
+		    diyfreq     = data[5],
+		    diytemp     = data[6],
+		    tempinfo    = data[7],
+		    luciversion = data[8];
 
 		luciversion = luciversion.branch + ' ' + luciversion.revision;
 
@@ -82,7 +96,6 @@ return baseclass.extend({
 		var fields = [
 			_('Hostname'),         boardinfo.hostname,
 			_('Model'),            boardinfo.model + cpubench.cpubench,
-			_('Architecture'),     cpuinfo.cpuinfo || boardinfo.system,
 			_('Target Platform'),  (L.isObject(boardinfo.release) ? boardinfo.release.target : ''),
 			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + boardinfo.release.revision : ''),
 			_('Kernel Version'),   boardinfo.kernel,
@@ -93,7 +106,7 @@ return baseclass.extend({
 				systeminfo.load[1] / 65535.0,
 				systeminfo.load[2] / 65535.0
 			) : null,
-			_('CPU usage (%)'),    cpuusage.cpuusage
+			_('CPU状态 '),          ' 使用率 ' + cpuusage.cpuusage + ' ， ' + '温度 ' + diytemp.diy + ' °C' + ' ， ' + ' 频率 ' + diyfreq.diyfreq / 1000 + ' MHz ' 
 		];
 
 		if (tempinfo.tempinfo) {
