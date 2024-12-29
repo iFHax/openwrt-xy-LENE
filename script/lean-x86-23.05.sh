@@ -7,7 +7,11 @@ sed -i 's/LEDE/EzOpWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/EzOpWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/soc-status feeds/luci/modules/luci-base/root/sbin/
+chmod a+rwx feeds/luci/modules/luci-base/root/sbin/soc-status
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/luci feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/luci-mod-status.json feeds/luci/modules/luci-mod-status/root/usr/share/rpcd/acl.d/
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/defset package/lean/default-settings/files/zzz-default-settings
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-msd_lite package/base-files/files/etc/99-msd_lite
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-udpxy package/base-files/files/etc/99-udpxy
