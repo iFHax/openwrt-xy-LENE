@@ -15,10 +15,10 @@ get_diy_temp() {
 
 case "$1" in
   diy_freq)
-    get_cpu_freq
+    get_diy_freq
     ;;
   diy_temp)
-    get_cpu_temp | awk '{ printf("%.1f\n", $1/1000) }'
+    get_diy_temp | awk '{ printf("%.1f\n", $1/1000) }'
     ;;
   *)
     echo "Usage: $0 {diy_freq|diy_temp}"
