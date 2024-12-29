@@ -33,14 +33,14 @@ var callCPUUsage = rpc.declare({
 	method: 'getCPUUsage'
 });
 
-var callDiyFreq = rpc.declare({
+var callCoreInfo = rpc.declare({
 	object: 'luci',
-	method: 'getDiyFreq'
+	method: 'getCoreInfo'
 });
 
-var callDiyTemp = rpc.declare({
+var callCoreTemp = rpc.declare({
 	object: 'luci',
-	method: 'getDiyTemp'
+	method: 'getCoreTemp'
 });
 
 var callTempInfo = rpc.declare({
@@ -58,8 +58,8 @@ return baseclass.extend({
 			L.resolveDefault(callCPUBench(), {}),
 			L.resolveDefault(callCPUInfo(), {}),
 			L.resolveDefault(callCPUUsage(), {}),
-			L.resolveDefault(callDiyFreq(), {}),
-			L.resolveDefault(callDiyTemp(), {}),
+			L.resolveDefault(callCoreInfo(), {}),
+			L.resolveDefault(callCoreTemp(), {}),
 			L.resolveDefault(callTempInfo(), {}),
 			L.resolveDefault(callLuciVersion(), { revision: _('unknown version'), branch: 'LuCI' })
 		]);
@@ -71,8 +71,8 @@ return baseclass.extend({
 		    cpubench    = data[2],
 		    cpuinfo     = data[3],
 		    cpuusage    = data[4],
-		    diyfreq     = data[5],
-		    diytemp     = data[6],
+		    coreinfo    = data[5],
+		    coretemp    = data[6],
 		    tempinfo    = data[7],
 		    luciversion = data[8];
 
@@ -106,7 +106,7 @@ return baseclass.extend({
 				systeminfo.load[1] / 65535.0,
 				systeminfo.load[2] / 65535.0
 			) : null,
-			_('CPU状态 '),          ' 使用率 ' + cpuusage.cpuusage + ' ， ' + '温度 ' + diytemp.diytemp + ' °C' + ' ， ' + ' 频率 ' + diyfreq.diyfreq / 1000 + ' MHz ' 
+			_('CPU状态 '),          ' 使用率 ' + cpuusage.cpuusage + ' ， ' + '温度 ' + coretemp.cpu + ' °C' + ' ， ' + ' 频率 ' + coreinfo.cpufreq / 1000 + ' MHz '
 		];
 
 		if (tempinfo.tempinfo) {
