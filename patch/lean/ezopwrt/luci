@@ -631,6 +631,32 @@ const methods = {
 		}
 	},
 
+	getDiyFreq: {
+		call: function() {
+			let fd;
+			let result = {};
+
+			fd = popen('soc-status diy_freq');
+			result.cpufreq = trim(fd.read('all'));
+			fd.close();
+
+			return result;
+		}
+	},
+
+	getDiyTemp: {
+		call: function() {
+			let fd;
+			let result = {};
+
+			fd = popen('soc-status diy_temp');
+			result.cpu = trim(fd.read('all'));
+			fd.close();
+
+			return result;
+		}
+	},
+
 	getTempInfo: {
 		call: function() {
 			if (!access('/sbin/tempinfo'))
