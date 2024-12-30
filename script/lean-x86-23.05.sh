@@ -98,7 +98,7 @@ mv package/kz8-small/lucky package/lucky
 mv package/kz8-small/luci-app-lucky package/luci-app-lucky
 mv package/kz8-small/mosdns package/mosdns
 mv package/kz8-small/luci-app-mosdns package/luci-app-mosdns
-mv package/kz8-small/luci-app-openvpn-client package/luci-app-openvpn-client
+#mv package/kz8-small/luci-app-openvpn-client package/luci-app-openvpn-client
 mv package/kz8-small/luci-app-onliner package/luci-app-onliner
 mv package/kz8-small/luci-app-partexp package/luci-app-partexp
 mv package/kz8-small/luci-app-pushbot package/luci-app-pushbot
