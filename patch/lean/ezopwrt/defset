@@ -57,7 +57,7 @@ sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
 sed -i '/luciname/d' /usr/lib/lua/luci/view/admin_status/index.htm
 date_version=$(date +"%y.%m.%d")
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
-echo "DISTRIB_REVISION='Vip-Custom-2024.12.31_lg_OpenwrtServer'" >> /etc/openwrt_release
+echo "DISTRIB_REVISION='Vip-Custom-2025.1.1_lg_OpenwrtServer'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='EzOpWrt '" >> /etc/openwrt_release
 mv /etc/99-msd_lite /etc/hotplug.d/iface/99-msd_lite
