@@ -17,7 +17,7 @@ mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-msd_lite package/base-files/files/etc
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-udpxy package/base-files/files/etc/99-udpxy
 
 git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
-git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
+#git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
