@@ -61,6 +61,7 @@ mv package/imm23pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm23pkg
 git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git package/imm23luci
 mv package/imm23luci/applications/luci-app-softethervpn package/luci-app-softethervpn
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-softethervpn/Makefile
 rm -rf package/imm23luci
 
 rm -rf feeds/packages/net/adguardhome
@@ -69,6 +70,7 @@ rm -rf feeds/luci/applications/luci-app-alist
 #rm -rf feeds/packages/net/aria2
 #rm -rf feeds/packages/net/ariang
 #rm -rf feeds/luci/applications/luci-app-aria2
+rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/net/lucky
 rm -rf feeds/luci/applications/luci-app-lucky
 rm -rf feeds/packages/net/mosdns
@@ -92,6 +94,7 @@ mv package/kz8-small/luci-app-control-timewol package/luci-app-control-timewol
 mv package/kz8-small/luci-app-control-webrestriction package/luci-app-control-webrestriction
 mv package/kz8-small/luci-app-control-weburl package/luci-app-control-weburl
 mv package/kz8-small/luci-app-chatgpt-web package/luci-app-chatgpt-web
+mv package/kz8-small/luci-app-dockerman package/luci-app-dockerman
 mv package/kz8-small/luci-app-easymesh package/luci-app-easymesh
 mv package/kz8-small/luci-app-eqosplus package/luci-app-eqosplus
 mv package/kz8-small/luci-app-guest-wifi package/luci-app-guest-wifi
