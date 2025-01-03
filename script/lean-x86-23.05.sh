@@ -59,6 +59,9 @@ mv package/imm23pkg/utils/docker feeds/packages/utils/docker
 mv package/imm23pkg/utils/dockerd feeds/packages/utils/dockerd
 mv package/imm23pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm23pkg
+git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git package/imm23luci
+mv package/imm24luci/applications/luci-app-softethervpn package/luci-app-softethervpn
+rm -rf package/imm23luci
 
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/packages/net/alist
@@ -107,7 +110,7 @@ mv package/kz8-small/luci-app-poweroffdevice package/luci-app-poweroffdevice
 mv package/kz8-small/luci-app-pptp-server package/luci-app-pptp-server
 mv package/kz8-small/smartdns package/smartdns
 mv package/kz8-small/luci-app-smartdns package/luci-app-smartdns
-mv package/kz8-small/luci-app-softethervpn package/luci-app-softethervpn
+#mv package/kz8-small/luci-app-softethervpn package/luci-app-softethervpn
 mv package/kz8-small/luci-app-wolplus package/luci-app-wolplus
 mv package/kz8-small/wrtbwmon package/wrtbwmon
 mv package/kz8-small/luci-app-wrtbwmon package/luci-app-wrtbwmon
