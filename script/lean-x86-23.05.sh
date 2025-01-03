@@ -60,7 +60,7 @@ mv package/imm23pkg/utils/dockerd feeds/packages/utils/dockerd
 mv package/imm23pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm23pkg
 git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git package/imm23luci
-mv package/imm24luci/applications/luci-app-softethervpn package/luci-app-softethervpn
+mv package/imm23luci/applications/luci-app-softethervpn package/luci-app-softethervpn
 rm -rf package/imm23luci
 
 rm -rf feeds/packages/net/adguardhome
