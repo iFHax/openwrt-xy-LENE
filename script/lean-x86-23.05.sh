@@ -15,6 +15,7 @@ mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/luci-mod-status.json feeds/luci/modules/
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/defset package/lean/default-settings/files/zzz-default-settings
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-msd_lite package/base-files/files/etc/99-msd_lite
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-udpxy package/base-files/files/etc/99-udpxy
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/wan.sh $OPENWRT_PATH/package/base-files/files/etc/uci-defaults/wan.sh
 
 git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
 #git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
