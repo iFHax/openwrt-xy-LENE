@@ -5,7 +5,13 @@ sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/luci2/bin/config_gener
 sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/soc-status feeds/luci/modules/luci-base/root/sbin/soc-status
+chmod a+rwx feeds/luci/modules/luci-base/root/sbin/soc-status
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/luci feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
+mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/luci-mod-status.json feeds/luci/modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json
 mv $GITHUB_WORKSPACE/patch/lean/defset package/lean/default-settings/files/zzz-default-settings
 
 rm -rf feeds/packages/lang/golang
