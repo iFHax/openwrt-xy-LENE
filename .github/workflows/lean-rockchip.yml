@@ -7,7 +7,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: config/rockchip-lean
+  CONFIG_FILE: config/rockchip-lean2
   DIY_SCRIPT: script/lean-rockchip.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
