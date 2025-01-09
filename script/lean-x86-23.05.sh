@@ -19,7 +19,7 @@ mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/wan.sh package/base-files/files/etc/uci-
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/rc.local package/base-files/files/etc/rc.local
 
 git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
-#git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
+git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
