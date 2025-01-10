@@ -97,7 +97,7 @@ return baseclass.extend({
 			_('Hostname'),         boardinfo.hostname,
 			_('Model'),            boardinfo.model + cpubench.cpubench,
 			_('Target Platform'),  (L.isObject(boardinfo.release) ? boardinfo.release.target : ''),
-			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + boardinfo.release.revision : '') + ' / ' + '阿龙de超级机器 ',
+			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + boardinfo.release.revision : '') + ' / ' + 'luci 23.05 ',
 			_('Kernel Version'),   boardinfo.kernel,
 			_('Local Time'),       datestr,
 			_('Uptime'),           systeminfo.uptime ? '%t'.format(systeminfo.uptime) : null,
