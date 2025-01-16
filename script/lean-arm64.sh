@@ -38,6 +38,7 @@ mv package/kz8-small/smartdns package/smartdns
 mv package/kz8-small/luci-app-smartdns package/luci-app-smartdns
 mv package/kz8-small/homebox package/homebox
 mv package/kz8-small/luci-app-netspeedtest package/luci-app-netspeedtest
+mv package/kz8-small/v2dat package/v2dat
 rm -rf package/kz8-small
 
 git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
