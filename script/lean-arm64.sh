@@ -7,7 +7,7 @@ sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 mv $GITHUB_WORKSPACE/patch/lean/defset package/lean/default-settings/files/zzz-default-settings
-#mv $GITHUB_WORKSPACE/patch/lean/199-mydef.sh package/base-files/files/etc/uci-defaults/199-mydef.sh
+mv $GITHUB_WORKSPACE/patch/lean/199-mydef.sh package/base-files/files/etc/uci-defaults/199-mydef.sh
 
 rm -rf feeds/luci/applications/{luci-app-alist,luci-app-adguardhome,luci-app-smartdns,luci-app-softethervpn}
 rm -rf feeds/packages/net/{alist,adguardhome,xray*,v2ray*,v2ray*,sing*,smartdns}
