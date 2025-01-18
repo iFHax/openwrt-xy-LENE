@@ -63,6 +63,6 @@ rm -f /tmp/luci-indexcache
 sed -i '/core/d' /etc/opkg/distfeeds.conf
 sed -i '/smpackage/d' /etc/opkg/distfeeds.conf
 sed -i '/kwrt/d' /etc/opkg/distfeeds.conf
-sed -i '/luci/d' /etc/opkg/distfeeds.conf
+#sed -i '/luci/d' /etc/opkg/distfeeds.conf
 
 exit 0
