@@ -24,6 +24,7 @@ git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/l
 git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
 git clone --depth 1 https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 git clone --depth 1 https://github.com/ophub/luci-app-amlogic package/luci-app-amlogic
+git clone --depth 1 https://github.com/Siriling/5G-Modem-Support.git package/5g-modem
 
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
