@@ -39,11 +39,12 @@ mv package/kz8-small/luci-app-netspeedtest package/luci-app-netspeedtest
 rm -rf package/kz8-small
 
 git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
-git clone https://github.com/sbwml/luci-app-filemanager.git package/luci-app-filemanager
+# git clone https://github.com/sbwml/luci-app-filemanager.git package/luci-app-filemanager
+git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
 
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
-git clone -b 18.06 --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
+#git clone -b 18.06 --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
 git clone -b 18.06 --depth=1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 rm -rf feeds/smpackage/luci-app-alist
