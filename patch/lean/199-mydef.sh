@@ -16,4 +16,6 @@ uci set dropbear.@dropbear[0].Interface=''
 
 uci commit
 
+/etc/init.d/network restart
+
 exit 0
