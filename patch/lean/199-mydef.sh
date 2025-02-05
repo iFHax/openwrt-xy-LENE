@@ -1,8 +1,10 @@
 #!/bin/sh
 
-#uci set dhcp.lan.ignore='1'
+uci set network.lan.ipaddr=192.168.2.2
+uci set network.lan.gateway=192.168.2.1
+uci set network.lan.dns=210.21.196.6
+uci set dhcp.lan.ignore=1
 #uci set network.lan.proto='dhcp'
-
 #uci set luci.main.mediaurlbase='/luci-static/design'
 
 
