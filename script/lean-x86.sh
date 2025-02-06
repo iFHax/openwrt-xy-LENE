@@ -10,7 +10,7 @@ mv $GITHUB_WORKSPACE/patch/lean/defset package/lean/default-settings/files/zzz-d
 mv $GITHUB_WORKSPACE/patch/lean/199-mydef.sh package/base-files/files/etc/uci-defaults/199-mydef.sh
 
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,luci-theme-argon}
-rm -rf feeds/luci/applications/{luci-app-alist,luci-app-adguardhome,luci-app-mosdns,luci-app-smartdns,luci-app-softethervpn}
+rm -rf feeds/luci/applications/{luci-app-alist,luci-app-adguardhome,luci-app-mosdns,luci-app-smartdns}
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 rm -rf feeds/packages/utils/v2dat
 rm -rf feeds/packages/lang/golang
@@ -20,7 +20,7 @@ git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclas
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone -b v5-lua https://github.com/sbwml/luci-app-mosdns package/mosdns
 #git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
@@ -40,12 +40,9 @@ mv package/kz8-small/luci-app-netspeedtest package/luci-app-netspeedtest
 rm -rf package/kz8-small
 
 git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
-# git clone https://github.com/sbwml/luci-app-filemanager.git package/luci-app-filemanager
 git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
 
 rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/applications/luci-app-argon-config
-#git clone -b 18.06 --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
 git clone -b 18.06 --depth=1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 rm -rf feeds/smpackage/luci-app-alist
