@@ -16,6 +16,7 @@ rm -rf feeds/packages/utils/v2dat
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 git clone https://github.com/sbwml/luci-app-mosdns -b v5-lua package/mosdns
 git clone --depth 1 https://github.com/sbwml/luci-app-filemanager.git package/luci-app-filemanager
 
