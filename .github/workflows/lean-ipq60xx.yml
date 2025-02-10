@@ -133,12 +133,6 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: Apply patches
-      run: |
-        mv $GITHUB_WORKSPACE/patch/lean/defset $OPENWRT_PATH/package/lean/default-settings/files/zzz-default-settings
-        mv $GITHUB_WORKSPACE/patch/banner $OPENWRT_PATH/package/base-files/files/etc/banner
-        mv $GITHUB_WORKSPACE/patch/lean/mac80211.sh $OPENWRT_PATH/package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
     - name: Load Custom Script
       run: |
         chmod +x $DIY_SCRIPT
@@ -180,8 +174,6 @@ jobs:
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
         cp $OPENWRT_PATH/.config full.config
-        mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
-        tar -zcf Packages.tar.gz packages
         rm -rf packages feeds.buildinfo version.buildinfo
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
 
