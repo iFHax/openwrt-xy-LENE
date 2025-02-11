@@ -8,6 +8,9 @@ sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 #mv $GITHUB_WORKSPACE/patch/lean/defset package/lean/default-settings/files/zzz-default-settings
 mv $GITHUB_WORKSPACE/patch/lean/199-my-x86.sh package/base-files/files/etc/uci-defaults/199-my-x86.sh
+sed -i '/openwrt_release/d' package/lean/default-settings/files/zzz-default-settings
+sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
+sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' package/lean/default-settings/files/zzz-default-settings
 
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,luci-theme-argon}
 rm -rf feeds/luci/applications/{luci-app-alist,luci-app-adguardhome,luci-app-mosdns,luci-app-smartdns}
