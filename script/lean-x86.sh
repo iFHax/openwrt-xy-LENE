@@ -36,6 +36,7 @@ mv package/kz8-small/smartdns package/smartdns
 mv package/kz8-small/luci-app-smartdns package/luci-app-smartdns
 mv package/kz8-small/homebox package/homebox
 mv package/kz8-small/luci-app-netspeedtest package/luci-app-netspeedtest
+mv package/kz8-small/luci-app-poweroffdevice package/luci-app-poweroffdevice
 mv package/kz8-small/luci-app-bypass package/luci-app-bypass
 rm -rf package/kz8-small
 
