@@ -10,13 +10,13 @@ uci commit luci
 
 uci set wireless.radio0.country=CN
 uci set wireless.radio0.txpower=20
-uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
+uci set wireless.default_radio0.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
 uci set wireless.default_radio0.encryption=psk2+ccmp
 uci set wireless.default_radio0.key=password
 
 uci set wireless.radio1.country=CN
 uci set wireless.radio1.txpower=20
-uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-5G
+uci set wireless.default_radio1.ssid=WiFi-$(cat /sys/class/ieee80211/phy0/macaddress|awk -F ":" '{print $5""$6 }' | tr 'a-z' 'A-Z')-2.4G
 uci set wireless.default_radio1.encryption=psk2+ccmp
 uci set wireless.default_radio1.key=password
 
@@ -30,6 +30,8 @@ uci set dropbear.@dropbear[0].Interface=''
 
 uci commit
 
+sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
+sed -i 's#packages/aarch64_cortex-a53/luci#packages-18.06-k5.4/aarch64_cortex-a53/luci#g' /etc/opkg/distfeeds.conf
 sed -i '/core/d' /etc/opkg/distfeeds.conf
 sed -i '/smpackage/d' /etc/opkg/distfeeds.conf
 sed -i '/kwrt/d' /etc/opkg/distfeeds.conf
