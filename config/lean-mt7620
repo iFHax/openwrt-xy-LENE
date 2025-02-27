@@ -4,12 +4,15 @@ CONFIG_TARGET_MULTI_PROFILE=y
 CONFIG_TARGET_DEVICE_ramips_mt7620_DEVICE_youku_yk-l1=y
 CONFIG_TARGET_DEVICE_ramips_mt7620_DEVICE_youku_yk-l1c=y
 
+CONFIG_LUCI_LANG_zh_Hans=y
 CONFIG_PACKAGE_ipv6helper=y
 CONFIG_PACKAGE_kmod-usb-storage=y
 CONFIG_PACKAGE_kmod-usb-storage-extras=y
 CONFIG_PACKAGE_kmod-usb2=y
-
 CONFIG_PACKAGE_luci-proto-ipv6=y
+
 CONFIG_PACKAGE_luci-theme-argon=y
-CONFIG_PACKAGE_luci-i18n-usb-printer-zh-cn=y
-CONFIG_PACKAGE_luci-app-usb-printer=y
+CONFIG_PACKAGE_luci-app-udpxy=y
+CONFIG_PACKAGE_luci-app-ddns-go=y
+CONFIG_PACKAGE_luci-app-socat=y
+CONFIG_PACKAGE_igmpproxy=y
