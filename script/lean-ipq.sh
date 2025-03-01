@@ -62,4 +62,5 @@ mv package/kz8-small/luci-app-lucky package/luci-app-lucky
 mv package/kz8-small/homebox package/homebox
 mv package/kz8-small/luci-app-netspeedtest package/luci-app-netspeedtest
 mv package/kz8-small/luci-app-pptp-server package/luci-app-pptp-server
+mv package/kz8-small/luci-app-pptp-server package/luci-app-openvpn-server
 rm -rf package/kz8-small
