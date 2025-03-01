@@ -35,7 +35,7 @@ rm -rf package/nas-packages/network
 
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
+git clone --depth 1 https://github.com/LemonCrab666/openwrt-luci-app-openvpn-server.git package/luci-app-openvpn-server
 
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/packages/net/alist
@@ -62,6 +62,6 @@ mv package/kz8-small/luci-app-lucky package/luci-app-lucky
 mv package/kz8-small/homebox package/homebox
 mv package/kz8-small/luci-app-netspeedtest package/luci-app-netspeedtest
 mv package/kz8-small/luci-app-pptp-server package/luci-app-pptp-server
-mv package/kz8-small/luci-app-openvpn-server package/luci-app-openvpn-server
-mv package/kz8-small/luci-app-openvpn-client package/luci-app-openvpn-client
+#mv package/kz8-small/luci-app-openvpn-server package/luci-app-openvpn-server
+#mv package/kz8-small/luci-app-openvpn-client package/luci-app-openvpn-client
 rm -rf package/kz8-small
