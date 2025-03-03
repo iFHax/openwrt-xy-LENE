@@ -6,7 +6,7 @@ sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i "s/luci-theme-bootstrap/luci-theme-design/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
-mv $GITHUB_WORKSPACE/patch/lean/199-my-x86.sh package/base-files/files/etc/uci-defaults/199-my-x86.sh
+mv $GITHUB_WORKSPACE/patch/lean/199-x86.sh package/base-files/files/etc/uci-defaults/zz-x86.sh
 sed -i '/openwrt_release/d' package/lean/default-settings/files/zzz-default-settings
 sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
 sed -i 's#mirrors.tencent.com/lede#mirrors.pku.edu.cn/immortalwrt#g' package/lean/default-settings/files/zzz-default-settings
@@ -15,8 +15,8 @@ rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftabl
 rm -rf feeds/luci/applications/{luci-app-alist,luci-app-adguardhome,luci-app-mosdns,luci-app-smartdns}
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 rm -rf feeds/packages/utils/v2dat
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+#rm -rf feeds/packages/lang/golang
+#git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
@@ -44,7 +44,6 @@ rm -rf package/kz8-small
 
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
 git clone -b lua --depth 1 https://github.com/sbwml/luci-app-alist.git feeds/luci/themes/luci-app-alist
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go.git package/luci-app-ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netdata.git package/luci-app-netdata
