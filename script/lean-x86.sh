@@ -4,7 +4,7 @@ sed -i 's/192.168.1.1/192.168.23.1/g' package/base-files/luci2/bin/config_genera
 sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-#sed -i "s/luci-theme-bootstrap/luci-theme-design/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
+
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 mv $GITHUB_WORKSPACE/patch/lean/199-x86.sh package/base-files/files/etc/uci-defaults/zz-x86.sh
 sed -i '/openwrt_release/d' package/lean/default-settings/files/zzz-default-settings
@@ -47,6 +47,7 @@ git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-theme-argon.git f
 git clone -b lua --depth 1 https://github.com/sbwml/luci-app-alist.git feeds/luci/themes/luci-app-alist
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go.git package/luci-app-ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netdata.git package/luci-app-netdata
+git clone --depth 1 https://github.com/lazywalker/mmdvm-openwrt.git package/mmdvm
 
 git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
 git clone --depth 1 -b master https://github.com/linkease/nas-packages.git package/nas-packages
