@@ -24,6 +24,9 @@ git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/lu
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 git clone -b v5-lua https://github.com/sbwml/luci-app-mosdns package/mosdns
 #git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+git clone --depth 1 -b core https://github.com/vernesong/OpenClash.git  package/openclash-core
+mv package/openclash-core/master/meta/clash-linux-amd64.tar.gz package/base-files/files/etc/clash-linux-amd64.tar.gz
+
 
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
@@ -48,6 +51,7 @@ git clone -b lua --depth 1 https://github.com/sbwml/luci-app-alist.git feeds/luc
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go.git package/luci-app-ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netdata.git package/luci-app-netdata
 git clone --depth 1 https://github.com/lazywalker/mmdvm-openwrt.git package/mmdvm
+git clone --depth 1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom.git package/luci-theme-infinityfreedom
 
 git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
 git clone --depth 1 -b master https://github.com/linkease/nas-packages.git package/nas-packages
