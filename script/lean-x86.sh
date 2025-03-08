@@ -26,6 +26,7 @@ git clone -b v5-lua https://github.com/sbwml/luci-app-mosdns package/mosdns
 #git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone --depth 1 -b core https://github.com/vernesong/OpenClash.git  package/openclash-core
 mv package/openclash-core/master/meta/clash-linux-amd64.tar.gz package/base-files/files/etc/clash-linux-amd64.tar.gz
+rm -rf package/openclash-core
 
 
 git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
