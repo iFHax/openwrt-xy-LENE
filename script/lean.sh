@@ -7,8 +7,8 @@ sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/lean/199-diy package/base-files/files/etc/uci-defaults/zz-diy
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 
-#rm -rf feeds/packages/lang/golang
-#git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 rm -rf feeds/packages/utils/v2dat
 #git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
@@ -35,3 +35,9 @@ rm -rf package/nas-packages/network
 
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+
+rm -rf feeds/packages/net/adguardhome
+git clone --depth 1 https://github.com/kenzok8/small-package.git package/kz8-small
+mv package/kz8-small/adguardhome package/adguardhome
+mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
+rm -rf package/kz8-small
