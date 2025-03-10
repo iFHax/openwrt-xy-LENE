@@ -19,6 +19,10 @@ echo "DISTRIB_REVISION='V${date_version}'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt  '" >> /etc/openwrt_release
 
+mkdir /root/diy
+mv /etc/cr6008.tar.gz /root/diy/cr6008.tar.gz
+sysupgrade --restore-backup /root/diy/cr6008.tar.gz
+
 #/etc/init.d/network restart
 
 exit 0
