@@ -6,8 +6,7 @@
 #uci set dhcp.lan.ignore=1
 #uci set network.lan.proto='dhcp'
 #uci set luci.main.mediaurlbase=/luci-static/design
-uci set luci.main.mediaurlbase=/luci-static/infinityfreedom-ng
-uci commit luci
+#uci commit luci
 
 # 设置所有网口可访问网页终端
 uci delete ttyd.@ttyd[0].interface
