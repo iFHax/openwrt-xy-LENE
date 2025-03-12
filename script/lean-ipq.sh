@@ -22,9 +22,9 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddn
 git clone --depth 1 -b lua https://github.com/sbwml/luci-app-alist.git package/alist
 
 # iStore
-git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
-git clone --depth=1 -b master https://github.com/linkease/nas-packages.git package/nas-packages
-git clone --depth=1 -b main https://github.com/linkease/nas-packages-luci.git package/nas-luci
+git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
+git clone --depth 1 -b master https://github.com/linkease/nas-packages.git package/nas-packages
+git clone --depth 1 -b main https://github.com/linkease/nas-packages-luci.git package/nas-luci
 mv package/nas-packages/network/services/* package/nas-packages/
 rm -rf package/nas-packages/network
 
@@ -35,13 +35,15 @@ rm -rf feeds/packages/net/ua2f
 
 
 #下载5g模块
-#git clone --depth=1 https://github.com/Siriling/5G-Modem-Support.git package/5g-modem
+#git clone --depth 1 https://github.com/Siriling/5G-Modem-Support.git package/5g-modem
 #sed -i 's/移动通信模组/通信模组/g' package/5g-modem/luci-app-modem/po/zh-cn/modem.po
 #sed -i 's/移动通信模组/通信模组/g' package/5g-modem/luci-app-modem/po/zh_Hans/modem.po
 
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/themes/luci-theme-argon-config
 git clone --depth 1 https://github.com/LemonCrab666/openwrt-luci-app-openvpn-server.git package/luci-app-openvpn-server
+git clone --depth 1 https://github.com/sirpdboy/luci-app-autotimeset.git package/luci-app-autotimeset
 
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/packages/net/alist
