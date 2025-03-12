@@ -31,6 +31,7 @@ rm -rf package/nas-packages/network
 #ua2f
 git clone https://github.com/lucikap/luci-app-ua2f.git package/luci-app-ua2f
 git clone https://github.com/Zxilly/UA2F.git package/UA2F
+git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
 rm -rf feeds/packages/net/ua2f
 
 
