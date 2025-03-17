@@ -36,6 +36,7 @@ rm -rf /etc/clash-linux-arm64.tar.gz
 mv /etc/openclash-config /etc/config/openclash
 mv /etc/openclash-yaml /etc/openclash/config/xxx.yaml
 cp /etc/openclash/config/xxx.yaml /etc/openclash/xxx.yaml
+/etc/init.d/openclash restart
 
 #/etc/init.d/network restart
 
