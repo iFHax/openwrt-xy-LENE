@@ -4,8 +4,11 @@ sed -i 's/192.168.1.1/192.168.23.1/g' package/base-files/luci2/bin/config_genera
 sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 mv $GITHUB_WORKSPACE/patch/lean/mac80211.sh package/kernel/mac80211/files/lib/wifi/mac80211.sh
-#mv $GITHUB_WORKSPACE/patch/lean/openclash.yaml package/base-files/files/etc/config.yaml
+mv $GITHUB_WORKSPACE/patch/lean/openclash/yaml package/base-files/files/etc/yaml
+mv $GITHUB_WORKSPACE/patch/lean/openclash/config package/base-files/files/etc/config
+
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 mv $GITHUB_WORKSPACE/patch/lean/199-rockchip.sh package/base-files/files/etc/uci-defaults/zz-rockchip.sh
 sed -i '/openwrt_release/d' package/lean/default-settings/files/zzz-default-settings
