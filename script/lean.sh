@@ -6,7 +6,7 @@ sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/lean/199-diy package/base-files/files/etc/uci-defaults/zz-diy
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
-mv $GITHUB_WORKSPACE/patch/lean/cr6608.tar.gz package/base-files/files/etc/cr6608.tar.gz
+#mv $GITHUB_WORKSPACE/patch/lean/cr6608.tar.gz package/base-files/files/etc/cr6608.tar.gz
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
