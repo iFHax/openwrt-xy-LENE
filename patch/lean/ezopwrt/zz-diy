@@ -1,0 +1,22 @@
+#!/bin/sh
+
+sed -i 's/\"services\"/\"control\"/g' /usr/lib/lua/luci/controller/mia.lua
+sed -i 's/\"services\"/\"control\"/g' /usr/lib/lua/luci/controller/appfilter.lua
+sed -i 's#downloads.openwrt.org#mirror.nju.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
+sed -i '/core/d' /etc/opkg/distfeeds.conf
+sed -i '/smpackage/d' /etc/opkg/distfeeds.conf
+#sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+
+date_version=$(date +"%y.%m.%d")
+sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
+echo "DISTRIB_REVISION='Vip-Custom-2025.1.8_lg_OpenwrtServer'" >> /etc/openwrt_release
+sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='EzOpWrt '" >> /etc/openwrt_release
+mv /etc/99-msd_lite /etc/hotplug.d/iface/99-msd_lite
+mv /etc/99-udpxy /etc/hotplug.d/iface/99-udpxy
+chmod a+rwx /etc/hotplug.d/iface/99-msd_lite
+chmod a+rwx /etc/hotplug.d/iface/99-udpxy
+
+
+exit 0
