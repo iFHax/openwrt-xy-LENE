@@ -1,0 +1,11 @@
+CONFIG_TARGET_x86=y
+CONFIG_TARGET_x86_64=y
+CONFIG_TARGET_x86_64_DEVICE_generic=y
+CONFIG_PACKAGE_kmod-usb3=y
+# CONFIG_PACKAGE_autosamba is not set
+CONFIG_PACKAGE_hostapd-common=y
+CONFIG_PACKAGE_wpad-openssl=y
+
+CONFIG_PACKAGE_luci-theme-kucat=y
+
+CONFIG_PACKAGE_luci-app-openvpn-server=y
