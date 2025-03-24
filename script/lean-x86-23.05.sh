@@ -81,6 +81,7 @@ rm -rf feeds/luci/applications/luci-app-lucky
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-openclash
+rm -rf feeds/luci/applications/luci-app-openvpn-server
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
 rm -rf feeds/packages/net/smartdns
@@ -110,7 +111,7 @@ mv package/kz8-small/lucky package/lucky
 mv package/kz8-small/luci-app-lucky package/luci-app-lucky
 mv package/kz8-small/mosdns package/mosdns
 mv package/kz8-small/luci-app-mosdns package/luci-app-mosdns
-#mv package/kz8-small/luci-app-openvpn-client package/luci-app-openvpn-client
+mv package/kz8-small/luci-app-openvpn-server package/luci-app-openvpn-server
 mv package/kz8-small/luci-app-onliner package/luci-app-onliner
 mv package/kz8-small/luci-app-partexp package/luci-app-partexp
 mv package/kz8-small/luci-app-pushbot package/luci-app-pushbot
