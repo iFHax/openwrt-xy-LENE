@@ -10,7 +10,7 @@ sed -i '/smpackage/d' /etc/opkg/distfeeds.conf
 
 date_version=$(date +"%y.%m.%d")
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
-echo "DISTRIB_REVISION='Vip-Custom-$(date +"%Y.%m.%d")_lg_OpenwrtServer'" >> /etc/openwrt_release
+echo "DISTRIB_REVISION='Vip-Custom-$(date +"%Y.%m.%d")_LG_OpenwrtServer'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='EzOpWrt '" >> /etc/openwrt_release
 mv /etc/99-msd_lite /etc/hotplug.d/iface/99-msd_lite
