@@ -8,8 +8,7 @@ board_config_update
 
 json_is_a network object && exit 0
 
-ucidef_set_interface_lan 'eth1'
-ucidef_set_interface_wan 'eth0'
+[ "$(ip address | grep ^[0-9] | awk -F: '{print $2}' | sed "s/ //g" | grep '^[e]' | grep -cvE "(@|\.)")" -gt 2 ] && ucidef_set_interfaces_lan_wan "$(ip address | grep ^[0-9] | awk -F: '{print $2}' | sed "s/ //g" | grep '^[e]' | grep -vE "(@|\.|eth0)" | tr "\n" " " | sed "s/ $//")" "eth0"
 
 board_config_flush
 
