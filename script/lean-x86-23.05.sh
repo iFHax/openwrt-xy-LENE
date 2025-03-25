@@ -8,7 +8,7 @@ sed -i 's/LEDE/EzOpWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
 sed -i '/distfeeds.conf/d' package/lean/default-settings/files/zzz-default-settings
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-default_network package/base-files/files/etc/board.d/99-default_network
+#mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-default_network package/base-files/files/etc/board.d/99-default_network
 
 mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/soc-status feeds/luci/modules/luci-base/root/sbin/soc-status
 chmod a+rwx feeds/luci/modules/luci-base/root/sbin/soc-status
