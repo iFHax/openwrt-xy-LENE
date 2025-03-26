@@ -30,4 +30,5 @@ chmod a+rwx /etc/hotplug.d/iface/99-udpxy
 mv /etc/cfg-network /etc/config/network
 
 /etc/init.d/network restart
+sleep 5 && /etc/init.d/network restart
 exit 0
