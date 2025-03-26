@@ -7,8 +7,6 @@ uci delete ttyd.@ttyd[0].interface
 uci set dropbear.@dropbear[0].Interface=''
 uci commit
 
-
-
 sed -i 's/\"services\"/\"control\"/g' /usr/lib/lua/luci/controller/mia.lua
 sed -i 's/\"services\"/\"control\"/g' /usr/lib/lua/luci/controller/appfilter.lua
 sed -i 's#downloads.openwrt.org#mirror.nju.edu.cn/immortalwrt#g' /etc/opkg/distfeeds.conf
@@ -27,6 +25,9 @@ mv /etc/99-udpxy /etc/hotplug.d/iface/99-udpxy
 chmod a+rwx /etc/hotplug.d/iface/99-msd_lite
 chmod a+rwx /etc/hotplug.d/iface/99-udpxy
 
+tar -zxf /etc/clash-linux-amd64.tar.gz -C /etc/openclash/core/
+mv /etc/openclash/core/clash /etc/openclash/core/clash_meta
+rm -rf /etc/clash-linux-amd64.tar.gz
 
 # 统计eth接口数量，大于1个则将eth0设为wan其它网口设为lan，只有1个则设置成DHCP模式
 eth_count=$(ls /sys/class/net | grep -c '^eth')
