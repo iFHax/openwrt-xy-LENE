@@ -9,7 +9,7 @@ mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
 sed -i '/distfeeds.conf/d' package/lean/default-settings/files/zzz-default-settings
 
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/cfg-network package/base-files/files/etc/cfg-network
+#mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/cfg-network package/base-files/files/etc/cfg-network
 #mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-default_network package/base-files/files/etc/board.d/99-default_network
 #chmod +x package/base-files/files/etc/board.d/99-default_network
 
