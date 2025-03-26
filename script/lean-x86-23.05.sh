@@ -53,7 +53,7 @@ mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/netwizard.lua package/luci-app-netwizard
 
 rm -rf feeds/luci/applications/luci-app-socat
 git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package.git package/sirpdboy-package
-mv package/sirpdboy-package/luci-app-pppoe-server package/luci-app-pppoe-server
+#mv package/sirpdboy-package/luci-app-pppoe-server package/luci-app-pppoe-server
 mv package/sirpdboy-package/luci-app-socat package/luci-app-socat
 rm -rf package/sirpdboy-package
 
@@ -71,6 +71,10 @@ git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git pac
 mv package/imm23luci/applications/luci-app-softethervpn package/luci-app-softethervpn
 sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-softethervpn/Makefile
 rm -rf package/imm23luci
+git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git package/imm24luci
+mv package/imm24luci/applications/luci-app-openvpn-server package/luci-app-openvpn-server
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-openvpn-server/Makefile
+rm -rf package/imm24luci
 
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/packages/net/alist
@@ -84,7 +88,7 @@ rm -rf feeds/luci/applications/luci-app-lucky
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-openclash
-#rm -rf feeds/luci/applications/luci-app-openvpn-server
+rm -rf feeds/luci/applications/luci-app-openvpn-server
 rm -rf feeds/luci/applications/luci-app-passwall
 rm -rf feeds/luci/applications/luci-app-passwall2
 rm -rf feeds/packages/net/smartdns
