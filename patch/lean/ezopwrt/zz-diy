@@ -29,6 +29,13 @@ chmod a+rwx /etc/hotplug.d/iface/99-udpxy
 
 mv /etc/cfg-network /etc/config/network
 
+#uci del dhcp.lan.dhcpv6
+#uci del dhcp.lan.ra_flags
+#uci commit dhcp
+#uci set network.lan.ip6assign='64'
+#uci set network.lan.ip6ifaceid='eui64'
+
 /etc/init.d/network restart
-sleep 5 && /etc/init.d/network restart
+/etc/init.d/odhcpd restart
+
 exit 0
