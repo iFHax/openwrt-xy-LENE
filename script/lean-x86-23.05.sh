@@ -71,10 +71,10 @@ git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git pac
 mv package/imm23luci/applications/luci-app-softethervpn package/luci-app-softethervpn
 sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-softethervpn/Makefile
 rm -rf package/imm23luci
-#git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git package/imm24luci
-#mv package/imm24luci/applications/luci-app-openvpn-server package/luci-app-openvpn-server
-#sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-openvpn-server/Makefile
-#rm -rf package/imm24luci
+git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git package/imm24luci
+mv package/imm24luci/applications/luci-app-pppoe-server package/luci-app-pppoe-server
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-pppoe-server/Makefile
+rm -rf package/imm24luci
 git clone --depth 1 -b master https://github.com/coolsnowwolf/luci.git package/ledeluci
 mv package/ledeluci/applications/luci-app-openvpn-server package/luci-app-openvpn-server
 sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-openvpn-server/Makefile
