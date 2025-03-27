@@ -44,7 +44,7 @@ git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/lu
 
 sed -i 's/上网时间控制/用户管控/g' feeds/luci/applications/luci-app-accesscontrol/po/zh_Hans/mia.po
 git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
-git clone --depth 1 https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
+git clone --depth 1 https://github.com/sirpdboy/luci-app-taskplan.git package/luci-app-taskplan
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netwizard package/luci-app-netwizard
 git clone --depth 1 https://github.com/sirpdboy/luci-app-parentcontrol package/luci-app-parentcontrol
 git clone --depth 1 https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
