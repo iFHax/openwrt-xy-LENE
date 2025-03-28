@@ -35,6 +35,7 @@ echo "DISTRIB_DESCRIPTION='OpenWrt  '" >> /etc/openwrt_release
 eth_count=$(ls /sys/class/net | grep -c '^eth')
 if [ $eth_count -gt 1 ]; then
     uci set network.wan.ifname='eth0'
+    uci set network.wan6.ifname='eth0'
     uci set network.lan.ifname="$(ls /sys/class/net | grep -E '^eth[1-9]$' | tr '\n' ' ' | sed 's/ \+$//')"
 else
     uci set network.lan.proto='dhcp'
