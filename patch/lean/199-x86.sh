@@ -26,10 +26,10 @@ echo "DISTRIB_REVISION='V${date_version}'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
 echo "DISTRIB_DESCRIPTION='OpenWrt  '" >> /etc/openwrt_release
 
-tar -zxf /etc/clash-linux-amd64.tar.gz -C /etc/openclash/core/
-mv /etc/openclash/core/clash /etc/openclash/core/clash_meta
-rm -rf /etc/clash-linux-amd64.tar.gz
+#tar -zxf /etc/clash-linux-amd64.tar.gz -C /etc/openclash/core/
+#mv /etc/openclash/core/clash /etc/openclash/core/clash_meta
+#rm -rf /etc/clash-linux-amd64.tar.gz
 
-/etc/init.d/network restart
+#/etc/init.d/network restart
 
 exit 0
