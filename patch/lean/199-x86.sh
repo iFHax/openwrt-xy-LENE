@@ -30,6 +30,12 @@ echo "DISTRIB_DESCRIPTION='OpenWrt  '" >> /etc/openwrt_release
 #mv /etc/openclash/core/clash /etc/openclash/core/clash_meta
 #rm -rf /etc/clash-linux-amd64.tar.gz
 
-#/etc/init.d/network restart
+sed -i 's/eth0/eth99/g' /etc/config/network
+sed -i 's/eth1/eth0/g' /etc/config/network
+sed -i 's/eth99/eth1/g' /etc/config/network
+
+#uci set network.lan.ifname=eth1 eth2 eth3
+#uci commit network
+/etc/init.d/network restart
 
 exit 0
