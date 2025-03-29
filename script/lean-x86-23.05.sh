@@ -32,6 +32,7 @@ git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/lu
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/openwrt-oaf
 git clone https://github.com/sbwml/luci-app-filemanager.git package/luci-app-filemanager
+git clone --depth 1 https://github.com/gSpotx2f/luci-app-cpu-status.git package/luci-app-cpu-status
 
 rm -rf feeds/packages/lang/golang
 git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
