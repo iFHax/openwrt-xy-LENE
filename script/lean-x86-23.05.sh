@@ -41,7 +41,8 @@ rm -rf feeds/luci/applications/luci-app-argon-config
 #git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
-
+rm -rf feeds/packages/net/ddns-go
+rm -rf feeds/luci/applications/luci-app-ddns-go
 sed -i 's/上网时间控制/用户管控/g' feeds/luci/applications/luci-app-accesscontrol/po/zh_Hans/mia.po
 git clone --depth 1 https://github.com/sirpdboy/luci-app-advancedplus package/luci-app-advancedplus
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go.git package/luci-app-ddns-go
@@ -57,6 +58,7 @@ git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package.git package/sir
 #mv package/sirpdboy-package/luci-app-pppoe-server package/luci-app-pppoe-server
 mv package/sirpdboy-package/luci-app-socat package/luci-app-socat
 rm -rf package/sirpdboy-package
+
 
 rm -rf feeds/packages/utils/docker
 rm -rf feeds/packages/utils/dockerd
@@ -81,16 +83,19 @@ mv package/ledeluci/applications/luci-app-openvpn-server package/luci-app-openvp
 sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-openvpn-server/Makefile
 rm -rf package/ledeluci
 
+rm -rf feeds/luci/applications/luci-app-ipsec-server
+git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git package/kwrt-packages
+mv package/kwrt-packages/luci-app-ipsec-server package/luci-app-ipsec-server
+rm -rf package/kwrt-packages
+
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/packages/net/alist
 rm -rf feeds/luci/applications/luci-app-alist
 #rm -rf feeds/packages/net/aria2
 #rm -rf feeds/packages/net/ariang
 #rm -rf feeds/luci/applications/luci-app-aria2
-rm -rf feeds/packages/net/ddns-go
-rm -rf feeds/luci/applications/luci-app-ddns-go
-rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/net/lucky
+rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/luci/applications/luci-app-lucky
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
@@ -101,7 +106,7 @@ rm -rf feeds/luci/applications/luci-app-passwall2
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/applications/luci-app-smartdns
 rm -rf feeds/luci/applications/luci-app-softether
-git clone --depth=1 https://github.com/kenzok8/small-package.git package/kz8-small
+git clone --depth 1 https://github.com/kenzok8/small-package.git package/kz8-small
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
 mv package/kz8-small/alist package/alist
