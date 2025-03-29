@@ -182,9 +182,10 @@ detect_mac80211() {
 			set wireless.default_radio${devidx}.device=radio${devidx}
 			set wireless.default_radio${devidx}.network=lan
 			set wireless.default_radio${devidx}.mode=ap
-			set wireless.default_radio${devidx}.ssid=urekago-5G
+			set wireless.default_radio0.ssid=pingbi-2.4
+			set wireless.default_radio1.ssid=pingbi-5G
 			set wireless.default_radio${devidx}.encryption=psk2+ccmp
-			set wireless.default_radio${devidx}.key=password
+			set wireless.default_radio${devidx}.key=88888888
 EOF
 		uci -q commit wireless
 
