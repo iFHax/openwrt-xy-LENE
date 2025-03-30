@@ -23,6 +23,6 @@ mkdir /root/diy
 mv /etc/adg.tar.gz /root/diy/adg.tar.gz
 sysupgrade --restore-backup /root/diy/adg.tar.gz
 
-/etc/init.d/network restart
+#/etc/init.d/network restart
 
 exit 0
