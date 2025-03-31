@@ -1,14 +1,12 @@
 CONFIG_TARGET_ramips=y
 CONFIG_TARGET_ramips_mt7620=y
-CONFIG_TARGET_MULTI_PROFILE=y
-CONFIG_TARGET_DEVICE_ramips_mt7620_DEVICE_youku_yk-l1=y
-CONFIG_TARGET_DEVICE_ramips_mt7620_DEVICE_youku_yk-l1c=y
+CONFIG_TARGET_ramips_mt7620_DEVICE_xiaomi_miwifi-r3=y
 
 CONFIG_LUCI_LANG_zh_Hans=y
 CONFIG_PACKAGE_ipv6helper=y
-CONFIG_PACKAGE_kmod-usb-storage=y
-CONFIG_PACKAGE_kmod-usb-storage-extras=y
-CONFIG_PACKAGE_kmod-usb2=y
+CONFIG_PACKAGE_kmod-usb-storage=m
+CONFIG_PACKAGE_kmod-usb-storage-extras=m
+CONFIG_PACKAGE_kmod-usb2=m
 CONFIG_PACKAGE_luci-proto-ipv6=y
 
 # CONFIG_PACKAGE_luci-app-accesscontrol is not set
@@ -23,9 +21,3 @@ CONFIG_PACKAGE_luci-proto-ipv6=y
 # CONFIG_PACKAGE_luci-app-vlmcsd is not set
 # CONFIG_PACKAGE_luci-app-vsftpd is not set
 # CONFIG_PACKAGE_luci-app-wol is not set
-
-CONFIG_PACKAGE_luci-theme-argon=y
-CONFIG_PACKAGE_luci-app-udpxy=y
-CONFIG_PACKAGE_luci-app-ddns-go=y
-CONFIG_PACKAGE_luci-app-socat=y
-CONFIG_PACKAGE_igmpproxy=y
