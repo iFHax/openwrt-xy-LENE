@@ -95,7 +95,7 @@ return baseclass.extend({
 
 		var fields = [
 			_('Hostname'),         boardinfo.hostname,
-			_('Model'),            boardinfo.model + cpubench.cpubench,
+			_('Model'),            '12th Gen Intel(R)Core(TM)i7-1265U:10核 12线程',
 			_('Target Platform'),  (L.isObject(boardinfo.release) ? boardinfo.release.target : ''),
 			_('Firmware Version'), (L.isObject(boardinfo.release) ? boardinfo.release.description + boardinfo.release.revision : ''),
 			_('Kernel Version'),   boardinfo.kernel,
