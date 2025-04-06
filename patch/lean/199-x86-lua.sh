@@ -8,6 +8,8 @@
 #uci set luci.main.mediaurlbase=/luci-static/design
 #uci commit luci
 
+# 设置默认防火墙规则，方便虚拟机首次访问 WebUI
+uci set firewall.@zone[1].input='ACCEPT'
 # 设置所有网口可访问网页终端
 uci delete ttyd.@ttyd[0].interface
 
@@ -49,6 +51,7 @@ fi
 #uci set network.wan._orig_bridge=false
 uci commit network
 
+uci commit
 /etc/init.d/network restart
 
 exit 0
