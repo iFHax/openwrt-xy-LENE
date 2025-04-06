@@ -67,8 +67,8 @@ rm -rf feeds/packages/utils/containerd
 rm -rf feeds/packages/utils/runc
 git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/packages package/imm24pkg
 mv package/imm24pkg/utils/containerd feeds/packages/utils/containerd
-#mv package/imm24pkg/utils/docker feeds/packages/utils/docker
-#mv package/imm24pkg/utils/dockerd feeds/packages/utils/dockerd
+mv package/imm24pkg/utils/docker feeds/packages/utils/docker
+mv package/imm24pkg/utils/dockerd feeds/packages/utils/dockerd
 mv package/imm24pkg/utils/runc feeds/packages/utils/runc
 rm -rf package/imm24pkg
 git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git package/imm23luci
@@ -116,8 +116,6 @@ mv package/kz8-small/luci-app-alist package/luci-app-alist
 #mv package/kz8-small/ariang package/ariang
 #mv package/kz8-small/luci-app-aria2 package/luci-app-aria2
 mv package/kz8-small/luci-app-bypass package/luci-app-bypass
-mv package/kz8-small/docker feeds/packages/utils/docker
-mv package/kz8-small/dockerd feeds/packages/utils/dockerd
 mv package/kz8-small/luci-app-control-timewol package/luci-app-control-timewol
 mv package/kz8-small/luci-app-control-webrestriction package/luci-app-control-webrestriction
 mv package/kz8-small/luci-app-control-weburl package/luci-app-control-weburl
