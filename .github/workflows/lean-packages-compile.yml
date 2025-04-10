@@ -84,16 +84,7 @@ jobs:
         SOURCE_REPO="$(echo $REPO_URL | awk -F '/' '{print $(NF)}')"
         echo "SOURCE_REPO=$SOURCE_REPO" >> $GITHUB_ENV
         SOURCE_AUTHOR="$(echo $REPO_URL | awk -F '/' '{print $4}')"
-        echo "SOURCE_AUTHOR=$SOURCE_AUTHOR" >> $GITHUB_ENV
-
-    - name: Cache Toolchain(缓存工具链)
-      if: env.CACHE_TOOLCHAIN == 'true'
-      uses: HiGarfield/cachewrtbuild@main
-      with:
-        ccache: false
-        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.SOURCE_AUTHOR }}-ipq60xx
-        prefix: ${{ env.OPENWRT_PATH }}
-    
+        echo "SOURCE_AUTHOR=$SOURCE_AUTHOR" >> $GITHUB_ENV    
 
     - name: Install Feeds
       run: |
@@ -124,7 +115,6 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         echo -e "$(nproc) thread compile"
-        make package/alist/alist/compile V=s
         make package/alist/luci-app-alist/compile V=s
         echo "status=success" >> $GITHUB_OUTPUT
         echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
