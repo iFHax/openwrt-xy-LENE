@@ -8,7 +8,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: config/lean-ipq-nowifi
+  CONFIG_FILE: config/rockchip-lean
   DIY_SCRIPT: script/lean-ipq.sh
   COMPILED_PKG_PATH: package/alist/luci-app-alist
   CLASH_KERNEL: amd64
