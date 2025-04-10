@@ -124,7 +124,7 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         echo -e "$(nproc) thread compile"
-        make $COMPILED_PKG_PATH/compile -j$(nproc) || make $COMPILED_PKG_PATH/compile -j1 V=s
+        make $COMPILED_PKG_PATH/compile -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
         echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
         echo "FILE_DATE=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
