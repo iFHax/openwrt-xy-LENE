@@ -53,7 +53,7 @@ rm -rf package/kz8-small
 
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone -b 18.06 --depth 1 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-git clone -b lua --depth 1 https://github.com/sbwml/luci-app-alist.git feeds/luci/themes/luci-app-alist
+git clone -b lua --depth 1 https://github.com/sbwml/luci-app-alist.git package/alist
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go.git package/luci-app-ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netdata.git package/luci-app-netdata
 
