@@ -9,7 +9,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   CONFIG_FILE: config/rockchip-lean
-  DIY_SCRIPT: script/rockchip-lean.sh
+  DIY_SCRIPT: script/lean-rockchip.sh
   COMPILED_PKG_PATH: package/alist/luci-app-alist
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
