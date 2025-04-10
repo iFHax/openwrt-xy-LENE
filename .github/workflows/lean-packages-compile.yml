@@ -124,7 +124,7 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         echo -e "$(nproc) thread compile"
-        make packagepackage/libs/toolchain/compile V=99
+        make package/libs/toolchain/compile V=99
         make package/alist/luci-app-alist/compile V=s
         echo "status=success" >> $GITHUB_OUTPUT
         echo "DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
