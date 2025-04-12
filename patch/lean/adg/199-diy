@@ -23,6 +23,6 @@ mv /etc/my-firewall /etc/config/firewall
 mv /etc/my-firewall.user /etc/firewall.user
 mv /etc/my-adgh.yaml /etc/AdGuardHome.yaml
 
-/etc/init.d/network restart
+#/etc/init.d/network restart
 /etc/init.d/firewall restart
 exit 0
