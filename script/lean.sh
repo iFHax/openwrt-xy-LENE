@@ -6,9 +6,11 @@ sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/lean/199-diy package/base-files/files/etc/uci-defaults/zz-diy
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
-#mv $GITHUB_WORKSPACE/patch/lean/adg.tar.gz package/base-files/files/etc/adg.tar.gz
-#mv $GITHUB_WORKSPACE/patch/lean/AdGuardHome.yaml package/base-files/files/etc/my-adgh.yaml
-#mv $GITHUB_WORKSPACE/patch/lean/mac80211.sh package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
+mv $GITHUB_WORKSPACE/patch/lean/adg/AdGuardHome.yaml package/base-files/files/etc/my-adgh.yaml
+mv $GITHUB_WORKSPACE/patch/lean/adg/firewall package/base-files/files/etc/my-firewall
+mv $GITHUB_WORKSPACE/patch/lean/adg/firewall.user package/base-files/files/etc/my-firewall.user
+mv $GITHUB_WORKSPACE/patch/lean/mac80211.sh package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
