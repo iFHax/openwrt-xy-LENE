@@ -30,7 +30,7 @@ git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 24.x feeds/
 
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/applications/luci-app-argon-config
-#git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
+git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config.git  package/luci-app-argon-config
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
 rm -rf feeds/packages/net/ddns-go
@@ -113,6 +113,7 @@ mv package/kz8-small/luci-app-control-timewol package/luci-app-control-timewol
 mv package/kz8-small/luci-app-control-webrestriction package/luci-app-control-webrestriction
 mv package/kz8-small/luci-app-control-weburl package/luci-app-control-weburl
 mv package/kz8-small/luci-app-chatgpt-web package/luci-app-chatgpt-web
+#mv package/kz8-small/luci-app-design-config package/luci-app-design-config
 mv package/kz8-small/luci-app-dockerman package/luci-app-dockerman
 mv package/kz8-small/luci-app-easymesh package/luci-app-easymesh
 mv package/kz8-small/luci-app-eqosplus package/luci-app-eqosplus
