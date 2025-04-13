@@ -73,6 +73,8 @@ rm -rf package/imm24luci
 git clone --depth 1 -b master https://github.com/coolsnowwolf/luci.git package/ledeluci
 mv package/ledeluci/applications/luci-app-openvpn-server package/luci-app-openvpn-server
 sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-openvpn-server/Makefile
+mv package/ledeluci/applications/luci-app-adbyby-plus package/luci-app-adbyby-plus
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-openvpn-adbyby-plus/Makefile
 rm -rf package/ledeluci
 
 rm -rf feeds/luci/applications/luci-app-ipsec-server
@@ -115,6 +117,7 @@ mv package/kz8-small/luci-app-dockerman package/luci-app-dockerman
 mv package/kz8-small/luci-app-easymesh package/luci-app-easymesh
 mv package/kz8-small/luci-app-eqosplus package/luci-app-eqosplus
 mv package/kz8-small/luci-app-guest-wifi package/luci-app-guest-wifi
+mv package/kz8-small/luci-app-ikoolproxy package/luci-app-ikoolproxy
 mv package/kz8-small/luci-app-ipsec-server package/luci-app-ipsec-server
 mv package/kz8-small/iptvhelper package/iptvhelper
 mv package/kz8-small/luci-app-iptvhelper package/luci-app-iptvhelper
