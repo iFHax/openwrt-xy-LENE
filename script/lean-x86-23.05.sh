@@ -74,7 +74,7 @@ git clone --depth 1 -b master https://github.com/coolsnowwolf/luci.git package/l
 mv package/ledeluci/applications/luci-app-openvpn-server package/luci-app-openvpn-server
 sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-openvpn-server/Makefile
 mv package/ledeluci/applications/luci-app-adbyby-plus package/luci-app-adbyby-plus
-sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-openvpn-adbyby-plus/Makefile
+sed -i 's#../../luci.mk#$(TOPDIR)/feeds/luci/luci.mk#g' package/luci-app-adbyby-plus/Makefile
 rm -rf package/ledeluci
 
 rm -rf feeds/luci/applications/luci-app-ipsec-server
