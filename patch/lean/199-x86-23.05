@@ -21,6 +21,7 @@ uci commit
 sed -i '/core/d' /etc/opkg/distfeeds.conf
 sed -i '/smpackage/d' /etc/opkg/distfeeds.conf
 sed -i '/kwrt/d' /etc/opkg/distfeeds.conf
+sed -i 's#downloads.openwrt.org#mirrors.pku.edu.cn/immortalimmortalwrt#g' /etc/opkg/distfeeds.conf
 date_version=$(date +"%Y.%m.%d")
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
 #echo "DISTRIB_REVISION='V${date_version}'" >> /etc/openwrt_release
