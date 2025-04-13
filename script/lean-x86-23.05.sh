@@ -9,9 +9,14 @@ mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 sed -i '/shadow/d' package/lean/default-settings/files/zzz-default-settings
 sed -i '/distfeeds.conf/d' package/lean/default-settings/files/zzz-default-settings
 
-git clone --depth 1 -b core https://github.com/vernesong/OpenClash.git  package/openclash-core
-mv package/openclash-core/master/meta/clash-linux-amd64.tar.gz package/base-files/files/etc/clash-linux-amd64.tar.gz
-rm -rf package/openclash-core
+#完全删除luci版本
+sed -i "s/+ ' \/ ' : '') + (luciversion ||/:/g" feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
+
+if grep -q "openclash=y" "$GITHUB_WORKSPACE/$CONFIG_FILE"; then
+    git clone --depth 1 -b core https://github.com/vernesong/OpenClash.git  package/openclash-core
+    mv package/openclash-core/master/meta/clash-linux-amd64.tar.gz package/base-files/files/etc/clash-linux-amd64.tar.gz
+    rm -rf package/openclash-core
+fi
 
 mv $GITHUB_WORKSPACE/patch/lean/199-x86-23.05 package/base-files/files/etc/uci-defaults/zz-diy
 
