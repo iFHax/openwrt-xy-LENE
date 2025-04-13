@@ -13,16 +13,7 @@ git clone --depth 1 -b core https://github.com/vernesong/OpenClash.git  package/
 mv package/openclash-core/master/meta/clash-linux-amd64.tar.gz package/base-files/files/etc/clash-linux-amd64.tar.gz
 rm -rf package/openclash-core
 
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/soc-status feeds/luci/modules/luci-base/root/sbin/soc-status
-chmod a+rwx feeds/luci/modules/luci-base/root/sbin/soc-status
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/luci feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/10_system.js feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/luci-mod-status.json feeds/luci/modules/luci-mod-status/root/usr/share/rpcd/acl.d/luci-mod-status.json
-
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-msd_lite package/base-files/files/etc/99-msd_lite
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/99-udpxy package/base-files/files/etc/99-udpxy
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/zz-diy package/base-files/files/etc/uci-defaults/zz-diy
-mv $GITHUB_WORKSPACE/patch/lean/ezopwrt/rc.local package/base-files/files/etc/rc.local
+mv $GITHUB_WORKSPACE/patch/lean/199-x86-23.05 package/base-files/files/etc/uci-defaults/zz-diy
 
 git clone --depth 1 -b main https://github.com/linkease/istore.git package/istore
 git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
