@@ -8,13 +8,13 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   CONFIG_FILE: config/lean-n1
-  DIY_SCRIPT: script/lean-n1.sh
+  DIY_SCRIPT: script/lean.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   FIRMWARE_RELEASE: false
-  FIRMWARE_TAG: lean-x86-23.05
+  FIRMWARE_TAG: lean-n1
   TZ: Asia/Shanghai
 
 jobs:
