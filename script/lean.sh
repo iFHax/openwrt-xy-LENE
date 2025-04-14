@@ -7,16 +7,16 @@ sed -i 's/LEDE/OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 mv $GITHUB_WORKSPACE/patch/lean/199-diy package/base-files/files/etc/uci-defaults/zz-diy
 mv $GITHUB_WORKSPACE/patch/banner package/base-files/files/etc/banner
 
-mv $GITHUB_WORKSPACE/patch/lean/adg/AdGuardHome.yaml package/base-files/files/etc/my-adgh.yaml
-mv $GITHUB_WORKSPACE/patch/lean/adg/firewall package/base-files/files/etc/my-firewall
-mv $GITHUB_WORKSPACE/patch/lean/adg/firewall.user package/base-files/files/etc/my-firewall.user
-mv $GITHUB_WORKSPACE/patch/lean/mac80211.sh package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#mv $GITHUB_WORKSPACE/patch/lean/adg/AdGuardHome.yaml package/base-files/files/etc/my-adgh.yaml
+#mv $GITHUB_WORKSPACE/patch/lean/adg/firewall package/base-files/files/etc/my-firewall
+#mv $GITHUB_WORKSPACE/patch/lean/adg/firewall.user package/base-files/files/etc/my-firewall.user
+#mv $GITHUB_WORKSPACE/patch/lean/mac80211.sh package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
 rm -rf feeds/packages/utils/v2dat
-git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
+#git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
 git clone --depth 1 https://github.com/vernesong/OpenClash.git  package/openclash
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
@@ -25,6 +25,7 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5-lua package/mosdns
 
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 git clone --depth 1 -b lua https://github.com/sbwml/luci-app-alist.git package/alist
+git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # iStore
 git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
