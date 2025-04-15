@@ -26,6 +26,7 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5-lua package/mosdns
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go.git package/ddns-go
 git clone --depth 1 -b lua https://github.com/sbwml/luci-app-alist.git package/alist
 git clone --depth 1 https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+git clone --depth 1 https://github.com/ophub/luci-app-amlogic package/luci-app-amlogic
 
 # iStore
 git clone --depth=1 -b main https://github.com/linkease/istore.git package/istore
