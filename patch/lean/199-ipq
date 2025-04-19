@@ -5,8 +5,8 @@
 #uci set network.lan.dns=192.168.2.1
 #uci set dhcp.lan.ignore=1
 #uci set network.lan.proto='dhcp'
-uci set luci.main.mediaurlbase=/luci-static/design
-uci commit luci
+#uci set luci.main.mediaurlbase=/luci-static/design
+#uci commit luci
 
 #uci set wireless.radio0.country=CN
 #uci set wireless.radio0.txpower=20
