@@ -29,10 +29,10 @@ mv package/nas-packages/network/services/* package/nas-packages/
 rm -rf package/nas-packages/network
 
 #ua2f
-git clone https://github.com/lucikap/luci-app-ua2f.git package/luci-app-ua2f
-git clone https://github.com/Zxilly/UA2F.git package/UA2F
-git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
-rm -rf feeds/packages/net/ua2f
+#git clone https://github.com/lucikap/luci-app-ua2f.git package/luci-app-ua2f
+#git clone https://github.com/Zxilly/UA2F.git package/UA2F
+#git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
+#rm -rf feeds/packages/net/ua2f
 
 
 #下载5g模块
@@ -62,6 +62,7 @@ git clone --depth 1 https://github.com/kenzok8/small-package.git package/kz8-sma
 mv package/kz8-small/adguardhome package/adguardhome
 mv package/kz8-small/luci-app-adguardhome package/luci-app-adguardhome
 mv package/kz8-small/luci-app-chatgpt-web package/luci-app-chatgpt-web
+mv package/kz8-small/luci-app-dnsfilter package/luci-app-dnsfilter
 mv package/kz8-small/luci-app-easymesh package/luci-app-easymesh
 mv package/kz8-small/luci-app-eqosplus package/luci-app-eqosplus
 mv package/kz8-small/iptvhelper package/iptvhelper
