@@ -6,7 +6,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: config/IPQ807x-AW1000
+  CONFIG_FILE: AW1000/aw1000.config
   DIY_SCRIPT: script/lean-ipq.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
@@ -111,6 +111,7 @@ jobs:
       run: |
         [ -e $CONFIG_FILE ] && cp $CONFIG_FILE $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
+        cat .config
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
