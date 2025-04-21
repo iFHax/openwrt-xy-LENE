@@ -1,4 +1,4 @@
-name: lean-ipq807x
+name: IPQ807x-AW1000
 
 on: 
   workflow_dispatch:
@@ -6,15 +6,15 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: config/lean-ipq807x
+  CONFIG_FILE: config/IPQ807x-AW1000
   DIY_SCRIPT: script/lean-ipq.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: lean-ipq807x-wifi
-  TZ: Asia/Shanghai
+  FIRMWARE_TAG: IPQ807x-WIFI
+  TZ: Asia/Kuala_Lumpur
 
 jobs:
   Build:
