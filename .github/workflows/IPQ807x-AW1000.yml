@@ -1,17 +1,18 @@
-name: IPQ807x-AW1000
+name: IPQ807X-WIFI
 
-on: 
+on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */5 * * *' 
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
-  CONFIG_FILE: AW1000/aw1000.config
+  # CONFIG_FILE: configs/ipq807x.config
   DIY_SCRIPT: script/lean-ipq.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: IPQ807x-WIFI
   TZ: Asia/Kuala_Lumpur
@@ -35,32 +36,22 @@ jobs:
         echo "--------------------------Disk Information--------------------------"
         echo "Number of disks: $(ls /dev/sd* | grep -v [1-9] | wc -l)" && df -hT
 
-    - name: Initialization environment
+
+    - name: Initialization Environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        set +e
-        docker rmi `docker images -q`
-        echo "Deleting files, please wait ..."
-        sudo rm -rf \
-          /usr/share/dotnet \
-          /usr/local/lib/android \
-          /opt/ghc \
-          /etc/mysql \
-          /etc/php
-        sudo -E apt-get -y purge azure-cli* docker* ghc* zulu* hhvm* llvm* firefox* google* dotnet* aspnetcore* powershell* openjdk* adoptopenjdk* mysql* php* mongodb* moby* snap* || true
-        sudo -E apt-get update
-        sudo -E apt-get -y install ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
-          bzip2 ccache clang cmake cpio curl device-tree-compiler flex gawk gcc-multilib g++-multilib gettext \
-          genisoimage git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libfuse-dev libglib2.0-dev \
-          libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libpython3-dev \
-          libreadline-dev libssl-dev libtool llvm lrzsz msmtp ninja-build p7zip p7zip-full patch pkgconf \
-          python3 python3-pyelftools python3-setuptools qemu-utils rsync scons squashfs-tools subversion \
-          swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev
+        docker rmi $(docker images -q)
+        sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android $AGENT_TOOLSDIRECTORY
+        sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
+        sudo -E apt-get -y update
+        sudo -E apt-get -y install $(curl -fsSL is.gd/depends_ubuntu_2204)
+        sudo -E systemctl daemon-reload
         sudo -E apt-get -y autoremove --purge
-        sudo -E apt-get clean
+        sudo -E apt-get -y clean
+        sudo timedatectl set-timezone "$TZ"
 
-    - name: Combine Disks(合并磁盘)
+    - name: Combine Disks
       uses: easimon/maximize-build-space@master
       with:
         swap-size-mb: 1024
@@ -73,45 +64,52 @@ jobs:
     - name: Clone Source Code
       run: |
         df -hT $GITHUB_WORKSPACE
-        git clone --depth 1 -b $REPO_BRANCH --single-branch $REPO_URL openwrt
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
-        VERSION_INFO=$(git show -s --date=short --format="作者: %an<br/>时间: %cd<br/>内容: %s<br/>hash: %H")
+        VERSION_INFO=$(git show -s --date=short --format="Author: %an<br/>Date: %cd<br/>Message: %s<br/>Hash: %H")
         echo "VERSION_INFO=$VERSION_INFO" >> $GITHUB_ENV
+
+    - name: Generate Variables
+      run: |
+        # cp $CONFIG_FILE $OPENWRT_PATH/.config
+        cd $OPENWRT_PATH
+        [ -f .config ] && rm -f .config
+        curl -L -o .config https://raw.githubusercontent.com/aNzTikTok/openwrt-ci/main/raw/aw1000.config
+        cat .config
+        make defconfig
         SOURCE_REPO="$(echo $REPO_URL | awk -F '/' '{print $(NF)}')"
         echo "SOURCE_REPO=$SOURCE_REPO" >> $GITHUB_ENV
-        SOURCE_AUTHOR="$(echo $REPO_URL | awk -F '/' '{print $4}')"
-        echo "SOURCE_AUTHOR=$SOURCE_AUTHOR" >> $GITHUB_ENV
+        DEVICE_TARGET=$(cat .config | grep CONFIG_TARGET_BOARD | awk -F '"' '{print $2}')
+        echo "DEVICE_TARGET=$DEVICE_TARGET" >> $GITHUB_ENV
+        DEVICE_SUBTARGET=$(cat .config | grep CONFIG_TARGET_SUBTARGET | awk -F '"' '{print $2}')
+        echo "DEVICE_SUBTARGET=$DEVICE_SUBTARGET" >> $GITHUB_ENV
 
     - name: Cache Toolchain
       if: env.CACHE_TOOLCHAIN == 'true'
       uses: HiGarfield/cachewrtbuild@main
       with:
         ccache: false
-        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.SOURCE_AUTHOR }}-ipq807x
+        mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
     
-
     - name: Install Feeds
       run: |
-        mv $GITHUB_WORKSPACE/patch/lean/feeds.conf.default $OPENWRT_PATH/feeds.conf.default
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-
-    - name: Load Custom Script
+  
+    - name: Load Custom Configuration
       run: |
-        chmod +x $DIY_SCRIPT
+        [ -e files ] && mv files $OPENWRT_PATH/files
         cd $OPENWRT_PATH
-        $GITHUB_WORKSPACE/$DIY_SCRIPT
-
+        [ -f .config ] && rm -f .config
+        curl -L -o .config https://raw.githubusercontent.com/aNzTikTok/openwrt-ci/main/raw/aw1000.config
+        cat .config
+        
     - name: Download DL Package
       run: |
-        [ -e $CONFIG_FILE ] && cp $CONFIG_FILE $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
-        cat .config
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
@@ -143,17 +141,25 @@ jobs:
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
         cat sha256sums
-        cp $OPENWRT_PATH/.config full.config
-        mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
-        tar -zcf Packages.tar.gz packages
-        rm -rf packages feeds.buildinfo version.buildinfo
+        cp $OPENWRT_PATH/.config build.config
+
+        IPK_PATH="$OPENWRT_PATH/bin/packages"
+        if compgen -G "$IPK_PATH/*/*/*.ipk" > /dev/null; then
+          mkdir -p packages
+          mv -f $IPK_PATH/*/*/*.ipk packages
+          tar -zcf Packages.tar.gz packages
+          rm -rf packages feeds.buildinfo version.buildinfo
+        else
+          echo "⚠ No .ipk files found to move."
+        fi
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
 
+
     - name: Upload Firmware To Artifact
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true'
+      if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE != 'true'
       uses: actions/upload-artifact@main
       with:
-        name: ${{ env.FIRMWARE_TAG }}-${{ env.FILE_DATE }}
+        name: ${{ env.SOURCE_REPO }}-firmware-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE_PATH }}
 
     - name: Upload Firmware To Release
@@ -166,11 +172,14 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
-          ### 📒 Firmware information
-          - ⚽ Firmware source code: ${{ env.REPO_URL }}
+          **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
+          - This is an IPQ807X firmware with WIFI and NSS support based on kernel 6.6
+          - 💻 This is the OpenWrt firmware for the ${{ env.FIRMWARE_TAG }} platform
+          - ⚽ Firmware source: ${{ env.REPO_URL }}
           - 💝 Source branch: ${{ env.REPO_BRANCH }}
           - 🌐 Default address: 192.168.1.1
-          - 🔑 Default Password: None / password
-          ### 🧊 Firmware version
-          - The last update record of ➦[main source code](${{ env.REPO_URL }}) before firmware compilation
+          - 🔑 Default password: password
+
+          ### 🧊 Firmware Version
+          - Last update of the ➦[main source](${{ env.REPO_URL }}) before firmware compilation
           - ${{ env.VERSION_INFO }}
